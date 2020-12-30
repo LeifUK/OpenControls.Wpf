@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.Serialisation", "OpenControls.Wpf.Serialisation\OpenControls.Wpf.Serialisation.csproj", "{4CD18485-9543-41D1-956C-55138B655E56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.DatabaseDialogs", "OpenControls.Wpf.DatabaseDialogs\OpenControls.Wpf.DatabaseDialogs.csproj", "{151BA859-70A2-4389-B175-462AB6E7A64A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.RotaryControl", "OpenControls.Wpf.RotaryControl\OpenControls.Wpf.RotaryControl.csproj", "{D3DD4AA6-BD25-4630-B28D-3625BC0E28CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.Carousel", "OpenControls.Wpf.Carousel\OpenControls.Wpf.Carousel.csproj", "{165CCCD7-7695-4E46-887B-7FCBC5C21363}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.CarouselDemo", "OpenControls.Wpf.CarouselDemo\OpenControls.Wpf.CarouselDemo.csproj", "{B6077E56-1AB7-482C-A81B-6973CA176F47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.RotaryControlDemo", "OpenControls.Wpf.RotaryControlDemo\OpenControls.Wpf.RotaryControlDemo.csproj", "{9B34E58B-9D8E-4F6C-B48D-21BFE7DB77DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.SliderButton", "OpenControls.Wpf.SliderButton\OpenControls.Wpf.SliderButton.csproj", "{DF07F330-E10E-453F-902B-3BCEF52C3074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.SliderButtonDemo", "OpenControls.Wpf.SliderButtonDemo\OpenControls.Wpf.SliderButtonDemo.csproj", "{46A6230E-B4F6-4F24-BDE0-2843AE60FF53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CD18485-9543-41D1-956C-55138B655E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CD18485-9543-41D1-956C-55138B655E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CD18485-9543-41D1-956C-55138B655E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CD18485-9543-41D1-956C-55138B655E56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151BA859-70A2-4389-B175-462AB6E7A64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151BA859-70A2-4389-B175-462AB6E7A64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151BA859-70A2-4389-B175-462AB6E7A64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151BA859-70A2-4389-B175-462AB6E7A64A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3DD4AA6-BD25-4630-B28D-3625BC0E28CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3DD4AA6-BD25-4630-B28D-3625BC0E28CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3DD4AA6-BD25-4630-B28D-3625BC0E28CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3DD4AA6-BD25-4630-B28D-3625BC0E28CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165CCCD7-7695-4E46-887B-7FCBC5C21363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165CCCD7-7695-4E46-887B-7FCBC5C21363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165CCCD7-7695-4E46-887B-7FCBC5C21363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165CCCD7-7695-4E46-887B-7FCBC5C21363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6077E56-1AB7-482C-A81B-6973CA176F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6077E56-1AB7-482C-A81B-6973CA176F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6077E56-1AB7-482C-A81B-6973CA176F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6077E56-1AB7-482C-A81B-6973CA176F47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B34E58B-9D8E-4F6C-B48D-21BFE7DB77DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B34E58B-9D8E-4F6C-B48D-21BFE7DB77DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B34E58B-9D8E-4F6C-B48D-21BFE7DB77DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B34E58B-9D8E-4F6C-B48D-21BFE7DB77DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF07F330-E10E-453F-902B-3BCEF52C3074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF07F330-E10E-453F-902B-3BCEF52C3074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF07F330-E10E-453F-902B-3BCEF52C3074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF07F330-E10E-453F-902B-3BCEF52C3074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A6230E-B4F6-4F24-BDE0-2843AE60FF53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A6230E-B4F6-4F24-BDE0-2843AE60FF53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A6230E-B4F6-4F24-BDE0-2843AE60FF53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A6230E-B4F6-4F24-BDE0-2843AE60FF53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59B75488-2BC5-4227-B53C-0D6F66BF68CD}
+	EndGlobalSection
+EndGlobal

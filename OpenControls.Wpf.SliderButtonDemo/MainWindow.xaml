@@ -1,0 +1,43 @@
+﻿<Window x:Class="OpenControls.Wpf.SliderButtonDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:OpenControls.Wpf.SliderButton.View;assembly=OpenControls.Wpf.SliderButton"
+        mc:Ignorable="d"
+        Background="Gainsboro"
+        ResizeMode="NoResize"
+        Title="Slider Button Demo" Height="360" Width="300">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/OpenControls.Wpf.SliderButton;component/View/ResourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <view:SliderButton Grid.Row="1" Grid.Column="1" OnLabel="On" OffLabel="Off" Width="70" ButtonWidth="20" Style="{StaticResource styleSliderButtonSideLabel}" IsChecked="{Binding IsEnabled}"/>
+        <view:SliderButton Grid.Row="3" Grid.Column="1" OnLabel="Yes" OffLabel="No" Width="60" Style="{StaticResource styleSliderButtonRectangular}" HorizontalAlignment="Center" IsChecked="{Binding IsEnabled}"/>
+        <view:SliderButton Grid.Row="5" Grid.Column="1" OnLabel="On" OffLabel="Off" Width="80" FontSize="20" Style="{StaticResource styleSliderButtonRectangular}" HorizontalAlignment="Center" IsChecked="{Binding IsEnabled}"/>
+        <view:SliderButton Grid.Row="7" Grid.Column="1" OnLabel="On" OffLabel="Off" Width="110" ButtonWidth="50" Style="{StaticResource styleSliderButton}" HorizontalAlignment="Center" IsChecked="{Binding IsEnabled}" FontSize="30"/>
+        <view:SliderButton Grid.Row="9" Grid.Column="1" OnLabel="On" OffLabel="Off" Width="70" ButtonWidth="30" Style="{StaticResource styleSliderButton}" HorizontalAlignment="Center" IsChecked="{Binding IsEnabled}" FontSize="12"/>
+    </Grid>
+</Window>

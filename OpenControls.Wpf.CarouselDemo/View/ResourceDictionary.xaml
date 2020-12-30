@@ -1,0 +1,282 @@
+﻿<!-- These are default values to give a consistent look and feel -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+    <Brush x:Key="BackgroundBrush">#FAFAFA</Brush>
+    <ImageBrush x:Key="BackgroundImageBrush" ImageSource="./../Resources/TouchNetix.png" TileMode="Tile" ViewportUnits="Absolute"  Viewport="0,0,371,118" Opacity="0.02"/>
+    <Brush x:Key="FontBrush">Black</Brush>
+    <System:Double x:Key="FontSize">12</System:Double>
+    <System:Double x:Key="ButtonWidth">80</System:Double>
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    
+    <Style x:Key="groupBoxStyle" TargetType="GroupBox">
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Padding" Value="5,5,5,5"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+    </Style>
+    <Style x:Key="labelStyleOne" TargetType="Label">
+        <Setter Property="Padding" Value="0,16,0,12"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="comboBoxStyle" TargetType="ComboBox">
+        <Setter Property="Padding" Value="4,3,4,3"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="comboBoxStyle_usage" TargetType="ComboBox">
+        <Setter Property="Padding" Value="4,3,4,3"/>
+        <Setter Property="Margin" Value="0,2,4,2"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="labelStyle" TargetType="Label">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="labelStyleCentred" TargetType="Label">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="labelStyle_usage" TargetType="Label">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0,0,6,0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="checkBoxStyle" TargetType="CheckBox">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="radioButtonStyle" TargetType="RadioButton">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="buttonStyle" TargetType="Button">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="10,2,10,2"/>
+    </Style>
+    <Style x:Key="buttonStyleHelp" TargetType="Button">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="8,2,8,2"/>
+        <Setter Property="Content" Value="?"/>
+    </Style>
+    <Style x:Key="buttonStyleHidden" TargetType="Button" BasedOn="{StaticResource buttonStyle}">
+        <Setter Property="Visibility" Value="Hidden"/>
+    </Style>
+    <Style x:Key="textBoxStyle" TargetType="TextBox">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Padding" Value="0,0,0,2"/>
+    </Style>
+    <Style x:Key="textBoxStyleReadOnly" TargetType="TextBox" BasedOn="{StaticResource textBoxStyle}">
+        <Setter Property="IsReadOnly" Value="True"/>
+    </Style>
+    <Style x:Key="horizontalSeparatorStyle" TargetType="Separator">
+        <Style.Setters>
+            <Setter Property="LayoutTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="90" />
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="styleDataGrid" TargetType="DataGrid">
+        <Setter Property="IsTabStop" Value="True"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="AlternatingRowBackground" Value="White"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="AlternationCount" Value="2"/>
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="RowHeaderWidth" Value="0"/>
+        <Setter Property="VerticalGridLinesBrush" Value="LightSteelBlue"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="LightSteelBlue"/>
+        <Setter Property="CellStyle">
+            <Setter.Value>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="styleNoSelectListViewItemContainerStyle" TargetType="{x:Type ListViewItem}">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                    <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Usage styles -->
+    <Style x:Key="comboBoxStyle_usage_ReadOnly" TargetType="ComboBox" BasedOn="{StaticResource comboBoxStyle_usage}">
+        <Setter Property="IsEnabled" Value="False"/>
+    </Style>
+    <Style x:Key="checkBoxStyle_usage" TargetType="CheckBox">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0,2,4,2"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="checkBoxStyle_usage_ReadOnly" TargetType="CheckBox" BasedOn="{StaticResource checkBoxStyle_usage}">
+        <Setter Property="IsEnabled" Value="False"/>
+    </Style>
+    <Style x:Key="textBoxStyle_usage" TargetType="TextBox">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Margin" Value="0,2,4,2"/>
+        <Setter Property="Padding" Value="0,0,0,2"/>
+    </Style>
+    <Style x:Key="textBoxStyle_usage_ReadOnly" TargetType="TextBox" BasedOn="{StaticResource textBoxStyle_usage}">
+        <Setter Property="Background" Value="LightGray"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+    </Style>
+
+    <!-- The selected row is shown in blue even when focus has been lost -->
+    <Style x:Key="styleDataGridNoFocusSelection" BasedOn="{StaticResource styleDataGrid}" TargetType="DataGrid">
+        <Setter Property="CellStyle">
+            <Setter.Value>
+                <Style TargetType="DataGridCell">
+                    <!-- We have to define these next two even though they are in the base style. Maybe this is a WPF bug. -->
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="CornflowerBlue"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="styleDataGridNoSelection" BasedOn="{StaticResource styleDataGrid}" TargetType="DataGrid">
+        <Setter Property="CellStyle">
+            <Setter.Value>
+                <Style TargetType="DataGridCell">
+                    <!-- We have to define these next two even though they are in the base style. Maybe this is a WPF bug. -->
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="lineStyle" TargetType="Line">
+        <Setter Property="Stroke" Value="Gray" />
+        <Setter Property="Stretch" Value="Fill" />
+        <Setter Property="Grid.ZIndex" Value="100" />
+        <Setter Property="StrokeDashArray" Value="1,2" />
+    </Style>
+    <Style x:Key="tabControlStyleDefault" TargetType="{x:Type TabControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid Background="{TemplateBinding Background}" ClipToBounds="True" KeyboardNavigation.TabNavigation="Local" SnapsToDevicePixels="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="ColumnDefinition0" />
+                            <ColumnDefinition x:Name="ColumnDefinition1" Width="0" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="RowDefinition0" Height="Auto" />
+                            <RowDefinition x:Name="RowDefinition1" Height="*" />
+                        </Grid.RowDefinitions>
+                        <DockPanel Margin="2,2,0,0" LastChildFill="False" Background="{TemplateBinding Background}">
+                            <TabPanel x:Name="HeaderPanel" Margin="0,0,0,-1" VerticalAlignment="Bottom" Panel.ZIndex="1" DockPanel.Dock="Left"
+                                  IsItemsHost="True" KeyboardNavigation.TabIndex="1" />
+                        </DockPanel>
+                        <Border x:Name="ContentPanel" Grid.Row="1" Grid.Column="0"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                            <Grid x:Name="PART_ItemsHolder" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="tabControlStyle" TargetType="{x:Type TabControl}" BasedOn="{StaticResource tabControlStyleDefault}">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="DarkGray"/>
+        <Setter Property="Background" Value="{StaticResource ResourceKey=backgroundBrush}"/>
+    </Style>
+    <Style x:Key="horizontalLineStyle" TargetType="Line" BasedOn="{StaticResource lineStyle}">
+        <Setter Property="X2" Value="1" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Grid.ColumnSpan" Value="{Binding 
+            Path=ColumnDefinitions.Count, RelativeSource={RelativeSource AncestorType=Grid}}"/>
+    </Style>
+    <Style x:Key="verticalLineStyle" TargetType="Line" BasedOn="{StaticResource lineStyle}">
+        <Setter Property="Y2" Value="1" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Grid.RowSpan" Value="{Binding 
+            Path=RowDefinitions.Count, RelativeSource={RelativeSource AncestorType=Grid}}"/>
+    </Style>
+    <Style x:Key="verticalLineStyleLeft" TargetType="Line" BasedOn="{StaticResource verticalLineStyle}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+    <Style x:Key="horizontalLineStyleTop" TargetType="Line" BasedOn="{StaticResource horizontalLineStyle}">
+        <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+    <Style x:Key="toggleButton3DStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid x:Name="mainGrid" Margin="0,0,1,1" Background="LightGray">
+                        <Grid x:Name="uncheckedState">
+                            <Border BorderBrush="#FFFFFF" BorderThickness="1,1,0,0"/>
+                            <Border BorderBrush="#88000000" BorderThickness="0,0,1,1"/>
+                        </Grid>
+
+                        <Grid x:Name="checkedState" Visibility="Collapsed">
+                            <Border BorderBrush="#88000000" BorderThickness="1,1,0,0"/>
+                            <Border BorderBrush="#FFFFFF" BorderThickness="0,0,1,1"/>
+                        </Grid>
+                        <!--
+                            WPF needs a background to toggle IsChecked
+                            if the ContentPresenter does not fill the whole area
+                        -->
+                        <Border Background="#00000000" />
+
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center" />
+                    </Grid>
+
+                    <!-- triggers toggle visual appearance -->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="checkedState" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="uncheckedState" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="mainGrid" Property="Margin" Value="1,1,0,0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <System:Double x:Key="LabelRowHeight">23</System:Double>
+    <System:Double x:Key="EditBoxRowHeight">25</System:Double>
+    <Thickness x:Key="paddingButtonDefault" Left="6" Top="2" Right="6" Bottom="2" />
+
+
+</ResourceDictionary>

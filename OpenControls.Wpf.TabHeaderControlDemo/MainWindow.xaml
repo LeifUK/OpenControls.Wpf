@@ -1,0 +1,161 @@
+﻿<Window x:Class="OpenControls.Wpf.TabHeaderControlDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenControls.Wpf.TabHeaderControlDemo"
+        xmlns:wpfcontrollibrary="clr-namespace:OpenControls.Wpf.TabHeaderControl;assembly=OpenControls.Wpf.TabHeaderControl"
+        mc:Ignorable="d"
+        Background="LightSteelBlue"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <wpfcontrollibrary:TabHeaderControl Grid.Row="1" Grid.Column="1"
+            x:Name="_tabHeader1" ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader1_SelectionChanged"
+            SelectedItem="{Binding SelectedHeader, Mode=TwoWay}">
+            <wpfcontrollibrary:TabHeaderControl.DisplayMemberPath>HeaderText</wpfcontrollibrary:TabHeaderControl.DisplayMemberPath>
+            <wpfcontrollibrary:TabHeaderControl.SelectedTabBackground>
+                <Binding Path="SelectedTabBackground" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.SelectedTabBackground>
+            <wpfcontrollibrary:TabHeaderControl.UnselectedTabBackground>
+                <Binding Path="UnselectedTabBackground" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.UnselectedTabBackground>
+            <wpfcontrollibrary:TabHeaderControl.SelectedTabBorderThickness>
+                <Binding Path="SelectedTabBorderThickness" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.SelectedTabBorderThickness>
+            <wpfcontrollibrary:TabHeaderControl.UnselectedTabBorderThickness>
+                <Binding Path="UnselectedTabBorderThickness" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.UnselectedTabBorderThickness>
+            <wpfcontrollibrary:TabHeaderControl.SelectedTabBorderBrush>
+                <Binding Path="SelectedTabBorderBrush" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.SelectedTabBorderBrush>
+            <wpfcontrollibrary:TabHeaderControl.UnselectedTabBorderBrush>
+                <Binding Path="UnselectedTabBorderBrush" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.UnselectedTabBorderBrush>
+            <wpfcontrollibrary:TabHeaderControl.SelectedTabForeground>
+                <Binding Path="SelectedTabForeground" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.SelectedTabForeground>
+            <wpfcontrollibrary:TabHeaderControl.UnselectedTabForeground>
+                <Binding Path="UnselectedTabForeground" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.UnselectedTabForeground>
+            <wpfcontrollibrary:TabHeaderControl.FontSize><Binding Path="FontSize"/></wpfcontrollibrary:TabHeaderControl.FontSize>
+            <wpfcontrollibrary:TabHeaderControl.FontFamily><Binding Path="FontFamily"/></wpfcontrollibrary:TabHeaderControl.FontFamily>
+            <wpfcontrollibrary:TabHeaderControl.ActiveArrowBrush>Black
+            </wpfcontrollibrary:TabHeaderControl.ActiveArrowBrush>
+            <wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>Transparent
+            </wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>
+        </wpfcontrollibrary:TabHeaderControl>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding TabHeader1Body}"/>
+
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding TabHeader2Body}"/>
+        <wpfcontrollibrary:TabHeaderControl Grid.Row="5" Grid.Column="1"
+            x:Name="_tabHeader2" ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader2_SelectionChanged"
+            SelectedItem="{Binding SelectedHeader, Mode=TwoWay}">
+            <wpfcontrollibrary:TabHeaderControl.DisplayMemberPath>HeaderText</wpfcontrollibrary:TabHeaderControl.DisplayMemberPath>
+            <wpfcontrollibrary:TabHeaderControl.SelectedTabBackground>
+                <Binding Path="SelectedTabBackground" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.SelectedTabBackground>
+            <wpfcontrollibrary:TabHeaderControl.UnselectedTabBackground>
+                <Binding Path="UnselectedTabBackground" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.UnselectedTabBackground>
+            <wpfcontrollibrary:TabHeaderControl.SelectedTabBorderThickness>
+                <Binding Path="SelectedTabBorderThickness" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.SelectedTabBorderThickness>
+            <wpfcontrollibrary:TabHeaderControl.UnselectedTabBorderThickness>
+                <Binding Path="UnselectedTabBorderThickness" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.UnselectedTabBorderThickness>
+            <wpfcontrollibrary:TabHeaderControl.SelectedTabBorderBrush>
+                <Binding Path="SelectedTabBorderBrush" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.SelectedTabBorderBrush>
+            <wpfcontrollibrary:TabHeaderControl.UnselectedTabBorderBrush>
+                <Binding Path="UnselectedTabBorderBrush" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.UnselectedTabBorderBrush>
+            <wpfcontrollibrary:TabHeaderControl.SelectedTabForeground>
+                <Binding Path="SelectedTabForeground" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.SelectedTabForeground>
+            <wpfcontrollibrary:TabHeaderControl.UnselectedTabForeground>
+                <Binding Path="UnselectedTabForeground" Mode="TwoWay"/>
+            </wpfcontrollibrary:TabHeaderControl.UnselectedTabForeground>
+            <wpfcontrollibrary:TabHeaderControl.FontSize>
+                <Binding Path="FontSize"/>
+            </wpfcontrollibrary:TabHeaderControl.FontSize>
+            <wpfcontrollibrary:TabHeaderControl.FontFamily>
+                <Binding Path="FontFamily"/>
+            </wpfcontrollibrary:TabHeaderControl.FontFamily>
+            <wpfcontrollibrary:TabHeaderControl.ActiveArrowBrush>Black
+            </wpfcontrollibrary:TabHeaderControl.ActiveArrowBrush>
+            <wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>Transparent
+            </wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>
+        </wpfcontrollibrary:TabHeaderControl>
+
+        <wpfcontrollibrary:TabHeaderControl Grid.Row="7" Grid.Column="1"
+            x:Name="_tabHeader3" ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader3_SelectionChanged"
+            SelectedItem="{Binding SelectedHeader, Mode=TwoWay}">
+            <wpfcontrollibrary:TabHeaderControl.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="FrameworkElement.Margin" Value="0"/>
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                    <Setter Property="Padding" Value="0" />
+                    <Setter Property="Margin" Value="0" />
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListBoxItem_PreviewMouseLeftButtonDown" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border Background="{TemplateBinding Background}" Padding="4" 
+                                    SnapsToDevicePixels="true" BorderThickness="0" CornerRadius="20,10,0,0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="4"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="2"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="2"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="1" FontSize="14" Foreground="{TemplateBinding Foreground}" 
+                                            Background="{TemplateBinding Background}" Width="Auto" Padding="2,0,2,0" Margin="0" 
+                                            VerticalAlignment="Center">
+                                            <TextBlock>
+                                                <Run Text="{Binding Label}"/><Run Text=" ("/>
+                                                <Run Text="{Binding ID}"/><Run Text=")"/>
+                                            </TextBlock>
+                                        </Label>
+                                        <Button Grid.Column="3" Width="20" Height="20" Content="X" FontSize="12" 
+                                            Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" 
+                                            BorderThickness="0" Click="Button_Click"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="Orange"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter Property="Background" Value="DarkSlateBlue"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </wpfcontrollibrary:TabHeaderControl.ItemContainerStyle>
+        </wpfcontrollibrary:TabHeaderControl>
+        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding TabHeader3Body}"/>
+    </Grid>
+</Window>

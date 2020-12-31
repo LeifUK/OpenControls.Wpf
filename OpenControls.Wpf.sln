@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.SliderButt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.SliderButtonDemo", "OpenControls.Wpf.SliderButtonDemo\OpenControls.Wpf.SliderButtonDemo.csproj", "{46A6230E-B4F6-4F24-BDE0-2843AE60FF53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.TabHeaderControl", "OpenControls.Wpf.TabHeaderControl\OpenControls.Wpf.TabHeaderControl.csproj", "{8E8A4B99-7396-4CE2-81B1-53B2DA0827FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.Utilities", "OpenControls.Wpf.Utilities\OpenControls.Wpf.Utilities.csproj", "{117F1160-81BF-42CD-B48C-E73BEC059B30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.TabHeaderControlDemo", "OpenControls.Wpf.TabHeaderControlDemo\OpenControls.Wpf.TabHeaderControlDemo.csproj", "{DE2199DD-FC76-4D59-8D13-B040669070B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +63,18 @@ Global
 		{46A6230E-B4F6-4F24-BDE0-2843AE60FF53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46A6230E-B4F6-4F24-BDE0-2843AE60FF53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46A6230E-B4F6-4F24-BDE0-2843AE60FF53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E8A4B99-7396-4CE2-81B1-53B2DA0827FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E8A4B99-7396-4CE2-81B1-53B2DA0827FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E8A4B99-7396-4CE2-81B1-53B2DA0827FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E8A4B99-7396-4CE2-81B1-53B2DA0827FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{117F1160-81BF-42CD-B48C-E73BEC059B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{117F1160-81BF-42CD-B48C-E73BEC059B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{117F1160-81BF-42CD-B48C-E73BEC059B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{117F1160-81BF-42CD-B48C-E73BEC059B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE2199DD-FC76-4D59-8D13-B040669070B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE2199DD-FC76-4D59-8D13-B040669070B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE2199DD-FC76-4D59-8D13-B040669070B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE2199DD-FC76-4D59-8D13-B040669070B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

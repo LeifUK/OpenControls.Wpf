@@ -1,20 +1,6 @@
 ﻿
 namespace OpenControls.Wpf.TabHeaderControlDemo.ViewModel
 {
-    public class TabHeaderItem
-    {
-        public string Label { get; set; }
-        public int ID { get; set; }
-
-        public string HeaderText
-        {
-            get
-            {
-                return Label + " : " + ID;
-            }
-        }
-    }
-
     public class MainViewModel : System.ComponentModel.INotifyPropertyChanged
     {
         public MainViewModel()
@@ -26,12 +12,12 @@ namespace OpenControls.Wpf.TabHeaderControlDemo.ViewModel
             ListBoxItems.Add(new TabHeaderItem() { ID = 3, Label = "A really quite long item" });
             SelectedTabForeground = System.Windows.Media.Brushes.Black;
             SelectedTabBackground = System.Windows.Media.Brushes.AliceBlue;
-            SelectedTabBorderBrush = System.Windows.Media.Brushes.Black;
-            SelectedTabBorderThickness = new System.Windows.Thickness(2);
+            SelectedTabBorderBrush = System.Windows.Media.Brushes.Transparent;
+            SelectedTabBorderThickness = new System.Windows.Thickness(1, 0, 0, 0);
             UnselectedTabForeground = System.Windows.Media.Brushes.White;
             UnselectedTabBackground = System.Windows.Media.Brushes.CornflowerBlue;
-            UnselectedTabBorderBrush = System.Windows.Media.Brushes.White;
-            UnselectedTabBorderThickness = new System.Windows.Thickness(0);
+            UnselectedTabBorderBrush = System.Windows.Media.Brushes.Transparent;
+            UnselectedTabBorderThickness = new System.Windows.Thickness(1, 0, 0, 0);
         }
 
         private System.Collections.ObjectModel.ObservableCollection<TabHeaderItem> _listBoxItems;

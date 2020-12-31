@@ -7,7 +7,84 @@
         xmlns:wpfcontrollibrary="clr-namespace:OpenControls.Wpf.TabHeaderControl;assembly=OpenControls.Wpf.TabHeaderControl"
         mc:Ignorable="d"
         Background="LightSteelBlue"
-        Title="MainWindow" Height="450" Width="800">
+        Title="OpenControls.Wpf.TabHeaderControl Demonstration" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="ArrowStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Width" Value="18"/>
+            <Setter Property="Height" Value="18"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="8" Height="8" IsHitTestVisible="True" Background="Transparent">
+                            <Grid>
+                            <Line Name="_line1" X1="2" Y1="4" X2="7" Y2="8" StrokeThickness="2"/>
+                            <Line Name="_line2" X1="2" Y1="4" X2="7" Y2="0" StrokeThickness="2"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="_line1" Property="Stroke" Value="DarkRed" />
+                                <Setter TargetName="_line2" Property="Stroke" Value="DarkRed" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="_line1" Property="Stroke" Value="Gainsboro" />
+                                <Setter TargetName="_line2" Property="Stroke" Value="Gainsboro" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter TargetName="_line1" Property="Stroke" Value="Black" />
+                                <Setter TargetName="_line2" Property="Stroke" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="LeftArrow" TargetType="Button">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="2,0,2,0">
+                            <Border Name="_border" Background="Transparent" Width="18" Height="18" CornerRadius="0" BorderThickness="0" BorderBrush="Gray" HorizontalAlignment="Center"/>
+                            <Path Name="_pathPointer" Fill="{TemplateBinding Foreground}" Stroke="Black" StrokeThickness="0" Panel.ZIndex="98">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathGeometry.Figures>
+                                            <PathFigureCollection>
+                                                <PathFigure x:Name="_pathFigurePointer" StartPoint="6,10" IsFilled="True" IsClosed="True">
+                                                    <PathFigure.Segments>
+                                                        <PathSegmentCollection>
+                                                            <LineSegment Point="13,5"/>
+                                                            <LineSegment Point="13,15"/>
+                                                            <LineSegment Point="6,10"/>
+                                                        </PathSegmentCollection>
+                                                    </PathFigure.Segments>
+                                                </PathFigure>
+                                            </PathFigureCollection>
+                                        </PathGeometry.Figures>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="_pathPointer" Property="Fill" Value="Gainsboro" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter TargetName="_pathPointer" Property="Fill" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -24,6 +101,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <wpfcontrollibrary:TabHeaderControl Grid.Row="1" Grid.Column="1"
@@ -56,17 +136,22 @@
             </wpfcontrollibrary:TabHeaderControl.UnselectedTabForeground>
             <wpfcontrollibrary:TabHeaderControl.FontSize><Binding Path="FontSize"/></wpfcontrollibrary:TabHeaderControl.FontSize>
             <wpfcontrollibrary:TabHeaderControl.FontFamily><Binding Path="FontFamily"/></wpfcontrollibrary:TabHeaderControl.FontFamily>
-            <wpfcontrollibrary:TabHeaderControl.ActiveArrowBrush>Black
+            <wpfcontrollibrary:TabHeaderControl.ActiveArrowBrush>DarkRed
             </wpfcontrollibrary:TabHeaderControl.ActiveArrowBrush>
-            <wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>Transparent
+            <wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>Gray
             </wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>
         </wpfcontrollibrary:TabHeaderControl>
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding TabHeader1Body}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Text="{Binding TabHeader1Body}"/>
+        <Button Grid.Row="1" Grid.Column="3" Name="_button1" Click="_button1_Click" Style="{StaticResource LeftArrow}">
+            <Button.LayoutTransform>
+                <RotateTransform Angle="270"/>
+            </Button.LayoutTransform>
+        </Button>
 
-        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding TabHeader2Body}"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" Text="{Binding TabHeader2Body}"/>
         <wpfcontrollibrary:TabHeaderControl Grid.Row="5" Grid.Column="1"
             x:Name="_tabHeader2" ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader2_SelectionChanged"
-            SelectedItem="{Binding SelectedHeader, Mode=TwoWay}">
+            SelectedItem="{Binding SelectedHeader, Mode=TwoWay}" ArrowStyle="{StaticResource ArrowStyle}">
             <wpfcontrollibrary:TabHeaderControl.DisplayMemberPath>HeaderText</wpfcontrollibrary:TabHeaderControl.DisplayMemberPath>
             <wpfcontrollibrary:TabHeaderControl.SelectedTabBackground>
                 <Binding Path="SelectedTabBackground" Mode="TwoWay"/>
@@ -100,10 +185,14 @@
             </wpfcontrollibrary:TabHeaderControl.FontFamily>
             <wpfcontrollibrary:TabHeaderControl.ActiveArrowBrush>Black
             </wpfcontrollibrary:TabHeaderControl.ActiveArrowBrush>
-            <wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>Transparent
+            <wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>Gray
             </wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>
         </wpfcontrollibrary:TabHeaderControl>
-
+        <Button Grid.Row="5" Grid.Column="3" Name="_button2" Click="_button2_Click"  Style="{StaticResource LeftArrow}">
+            <Button.LayoutTransform>
+                <RotateTransform Angle="270"/>
+            </Button.LayoutTransform>
+        </Button>
         <wpfcontrollibrary:TabHeaderControl Grid.Row="7" Grid.Column="1"
             x:Name="_tabHeader3" ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader3_SelectionChanged"
             SelectedItem="{Binding SelectedHeader, Mode=TwoWay}">
@@ -113,7 +202,6 @@
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
                     <Setter Property="Padding" Value="0" />
                     <Setter Property="Margin" Value="0" />
-                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListBoxItem_PreviewMouseLeftButtonDown" />
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="ListBoxItem">
@@ -156,6 +244,11 @@
                 </Style>
             </wpfcontrollibrary:TabHeaderControl.ItemContainerStyle>
         </wpfcontrollibrary:TabHeaderControl>
-        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding TabHeader3Body}"/>
+        <Button Grid.Row="7" Grid.Column="3" Name="_button3" Click="_button3_Click" Style="{StaticResource LeftArrow}">
+            <Button.LayoutTransform>
+                <RotateTransform Angle="270"/>
+            </Button.LayoutTransform>
+        </Button>
+        <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="4" Text="{Binding TabHeader3Body}"/>
     </Grid>
 </Window>

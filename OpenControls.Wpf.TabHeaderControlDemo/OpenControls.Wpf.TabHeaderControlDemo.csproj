@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\TabHeaderItem.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -99,6 +100,10 @@
     <ProjectReference Include="..\OpenControls.Wpf.TabHeaderControl\OpenControls.Wpf.TabHeaderControl.csproj">
       <Project>{8e8a4b99-7396-4ce2-81b1-53b2da0827fb}</Project>
       <Name>OpenControls.Wpf.TabHeaderControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenControls.Wpf.Utilities\OpenControls.Wpf.Utilities.csproj">
+      <Project>{117f1160-81bf-42cd-b48c-e73bec059b30}</Project>
+      <Name>OpenControls.Wpf.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

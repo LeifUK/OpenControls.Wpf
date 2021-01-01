@@ -1,0 +1,75 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:OpenControls.Wpf.DockManager"
+                    xmlns:converters="clr-namespace:OpenControls.Wpf.DockManager.Converters"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                    xmlns:SystemWindows="clr-namespace:System.Windows;assembly=PresentationFramework">
+    <converters:BrushToColourConverter x:Key="BrushToColourConverter" />
+    <converters:ThicknessToStringConverter x:Key="ThicknessToStringConverter" />
+    <converters:CornerRadiusToStringConverter x:Key="CornerRadiusToStringConverter" />
+
+    <!-- Styles for view controls -->
+    <Style x:Key="StyleLabel" TargetType="Label">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="StyleCheckBox" TargetType="CheckBox">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="StyleRadioButton" TargetType="RadioButton">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="StyleButton" TargetType="Button">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="10,2,10,2"/>
+    </Style>
+    <Style x:Key="StyleComboBox" TargetType="ComboBox">
+        <Setter Property="Padding" Value="4,3,4,3"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!--Base style for title bar buttons-->
+    <Style x:Key="CaptionButtonStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid x:Name="LayoutRoot" Background="Transparent" Width="44" Height="30">
+                        <TextBlock x:Name="txt" Text="{TemplateBinding Content}" FontFamily="Segoe MDL2 Assets" FontSize="10" 
+                                   Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   RenderOptions.ClearTypeHint="Auto" TextOptions.TextRenderingMode="Aliased"  TextOptions.TextFormattingMode="Display"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="LayoutRoot" Property="Background" Value="#E5E5E5"/>
+                            <Setter TargetName="txt" Property="Foreground" Value="#000000"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MinimizeButtonStyle" TargetType="Button" BasedOn="{StaticResource CaptionButtonStyle}">
+        <Setter Property="Content" Value="&#xE949;"/>
+    </Style>
+    <Style x:Key="MaximizeButtonStyle" TargetType="Button" BasedOn="{StaticResource CaptionButtonStyle}">
+        <Setter Property="Content" Value="&#xE739;"/>
+    </Style>
+    <Style x:Key="RestoreButtonStyle" TargetType="Button" BasedOn="{StaticResource CaptionButtonStyle}">
+        <Setter Property="Content" Value="&#xE923;"/>
+    </Style>
+    <Style x:Key="CloseButtonStyle" TargetType="Button" BasedOn="{StaticResource CaptionButtonStyle}">
+        <Setter Property="Content" Value="&#xE106;"/>
+    </Style>
+    <Style x:Key="MenuButtonStyle" TargetType="Button" BasedOn="{StaticResource StyleViewListButton}">
+        <Setter Property="Background" Value="Gainsboro"/>
+    </Style>
+
+    <ItemsPanelTemplate x:Key="ItemsPanelTemplateToolList">
+            <StackPanel Orientation="Horizontal" />
+    </ItemsPanelTemplate>
+</ResourceDictionary>

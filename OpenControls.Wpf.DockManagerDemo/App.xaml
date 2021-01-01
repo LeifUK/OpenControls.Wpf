@@ -1,0 +1,129 @@
+﻿<Application x:Class="WpfDockManagerDemo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfDockManagerDemo"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="styleGridSplitter" TargetType="GridSplitter">
+                <Setter Property="Background" Value="Gainsboro"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Style>
+            <Style x:Key="styleHorizontalGridSplitter" TargetType="GridSplitter" BasedOn="{StaticResource styleGridSplitter}">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="Height" Value="4"/>
+            </Style>
+            <Style x:Key="styleVerticalGridSplitter" TargetType="GridSplitter" BasedOn="{StaticResource styleGridSplitter}">
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="Width" Value="4"/>
+            </Style>
+
+            <Style x:Key="styleHeaderPinButton" TargetType="Button">
+                <Setter Property="Width" Value="20"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid Margin="0,0,0,0">
+                                <Border Name="_border" Background="Transparent" Width="18" Height="18" CornerRadius="0" BorderThickness="0" BorderBrush="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Line Name="_pin1" X1="8" Y1="-2" X2="8" Y2="4" Stroke="White" StrokeThickness="5" VerticalAlignment="Center"/>
+                                        <Line Name="_pin2" X1="4" Y1="4" X2="12" Y2="4" Stroke="White" StrokeThickness="1" VerticalAlignment="Center"/>
+                                        <Line Name="_pin3" X1="8" Y1="6" X2="8" Y2="10" Stroke="White" StrokeThickness="1" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="_border" Property="Background" Value="Gainsboro" />
+                                    <Setter TargetName="_border" Property="BorderThickness" Value="1" />
+                                    <Setter TargetName="_pin1" Property="Stroke" Value="Black" />
+                                    <Setter TargetName="_pin2" Property="Stroke" Value="Black" />
+                                    <Setter TargetName="_pin3" Property="Stroke" Value="Black" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="_border" Property="Background" Value="Khaki" />
+                                    <Setter TargetName="_border" Property="BorderThickness" Value="1" />
+                                    <Setter TargetName="_pin1" Property="Stroke" Value="Black" />
+                                    <Setter TargetName="_pin2" Property="Stroke" Value="Black" />
+                                    <Setter TargetName="_pin3" Property="Stroke" Value="Black" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="styleHeaderMenuButton" TargetType="Button">
+                <Setter Property="Width" Value="20"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid Margin="0,0,0,0">
+                                <Border Name="_border" Background="Transparent" Width="18" Height="18" CornerRadius="0" BorderThickness="0" BorderBrush="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Polygon Name="_triangle" Points="0,1 8,1 4,5" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="_border" Property="Background" Value="Gainsboro" />
+                                    <Setter TargetName="_border" Property="BorderThickness" Value="1" />
+                                    <Setter TargetName="_triangle" Property="Fill" Value="Black" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="_border" Property="Background" Value="Khaki" />
+                                    <Setter TargetName="_border" Property="BorderThickness" Value="1" />
+                                    <Setter TargetName="_triangle" Property="Fill" Value="Black" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="styleHeaderCloseButton" TargetType="Button">
+                <Setter Property="Width" Value="20"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid Margin="0,0,0,0">
+                                <Border Name="_border" Background="Transparent" Width="18" Height="18" CornerRadius="0" BorderThickness="0" BorderBrush="Gray" HorizontalAlignment="Center">
+                                </Border>
+                                <Line Name="_line_1" X1="6" X2="14" Y1="6" Y2="14" Stroke="White" StrokeThickness="1"/>
+                                <Line Name="_line_2" X1="14" X2="6" Y1="6" Y2="14" Stroke="White" StrokeThickness="1"/>
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="_border" Property="Background" Value="Gainsboro" />
+                                    <Setter TargetName="_border" Property="BorderThickness" Value="1" />
+                                    <Setter TargetName="_line_1" Property="Stroke" Value="Black" />
+                                    <Setter TargetName="_line_2" Property="Stroke" Value="Black" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="_border" Property="Background" Value="Khaki" />
+                                    <Setter TargetName="_border" Property="BorderThickness" Value="1" />
+                                    <Setter TargetName="_line_1" Property="Stroke" Value="Black" />
+                                    <Setter TargetName="_line_2" Property="Stroke" Value="Black" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

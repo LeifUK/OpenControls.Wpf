@@ -1,0 +1,39 @@
+﻿<Window x:Class="OpenControls.Wpf.DockManager.SideLocationPane"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Topmost="True"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        Title="EdgeLocationPane" Height="400" Width="400">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../DockManager/Dictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{StaticResource RowIconHeight}"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="{StaticResource RowIconHeight}"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="{StaticResource RowIconHeight}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{StaticResource RowIconHeight}"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="{StaticResource RowIconHeight}"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="{StaticResource RowIconHeight}"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="2" Name="_buttonTopEdge" Style="{DynamicResource WindowLocationTopStyle}"/>
+        <Button Grid.Row="4" Grid.Column="2" Name="_buttonBottomEdge" Style="{DynamicResource WindowLocationBottomStyle}"/>
+        <Button Grid.Row="2" Grid.Column="0" Name="_buttonLeftEdge" Style="{DynamicResource WindowLocationLeftStyle}"/>
+        <Button Grid.Row="2" Grid.Column="4" Name="_buttonRightEdge" Style="{DynamicResource WindowLocationRightStyle}"/>
+    </Grid>
+</Window>

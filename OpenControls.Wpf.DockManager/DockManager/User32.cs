@@ -1,9 +1,9 @@
 ﻿using System.Runtime.InteropServices;
 using System;
 
-namespace OpenControls.Wpf.Utilities
+namespace OpenControls.Wpf.DockManager.Controls
 {
-    public class User32
+    class User32
     {
         public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
 

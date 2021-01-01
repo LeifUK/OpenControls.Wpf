@@ -25,6 +25,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.Utilities"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.TabHeaderControlDemo", "OpenControls.Wpf.TabHeaderControlDemo\OpenControls.Wpf.TabHeaderControlDemo.csproj", "{DE2199DD-FC76-4D59-8D13-B040669070B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.DockManagerDemoViews", "OpenControls.Wpf.DockManagerDemoViews\OpenControls.Wpf.DockManagerDemoViews.csproj", "{F83C1BA1-ABCC-40BE-A01F-B3055CEEC229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.DockManagerDemo", "OpenControls.Wpf.DockManagerDemo\OpenControls.Wpf.DockManagerDemo.csproj", "{9843B6E4-5B93-46FA-96B8-05E423118E9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.DockManagerDemo_2", "OpenControls.Wpf.DockManagerDemo_2\OpenControls.Wpf.DockManagerDemo_2.csproj", "{EC695FC3-A093-4F99-A13C-8885E529C5B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.DockManager", "OpenControls.Wpf.DockManager\OpenControls.Wpf.DockManager.csproj", "{C4D43E50-84B0-47FF-888E-7C8351368BD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.DockManager.Themes.Modern", "OpenControls.Wpf.DockManager.Themes.Modern\OpenControls.Wpf.DockManager.Themes.Modern.csproj", "{E2FCBC58-6CA9-4EA6-852E-EBB43E596F19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.DockManager.Themes.VS2019", "OpenControls.Wpf.DockManager.Themes.VS2019\OpenControls.Wpf.DockManager.Themes.VS2019.csproj", "{968C6AFE-1E13-4F9D-B8FC-28B2A2168C9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +87,30 @@ Global
 		{DE2199DD-FC76-4D59-8D13-B040669070B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE2199DD-FC76-4D59-8D13-B040669070B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE2199DD-FC76-4D59-8D13-B040669070B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83C1BA1-ABCC-40BE-A01F-B3055CEEC229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83C1BA1-ABCC-40BE-A01F-B3055CEEC229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83C1BA1-ABCC-40BE-A01F-B3055CEEC229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83C1BA1-ABCC-40BE-A01F-B3055CEEC229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9843B6E4-5B93-46FA-96B8-05E423118E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9843B6E4-5B93-46FA-96B8-05E423118E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9843B6E4-5B93-46FA-96B8-05E423118E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9843B6E4-5B93-46FA-96B8-05E423118E9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC695FC3-A093-4F99-A13C-8885E529C5B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC695FC3-A093-4F99-A13C-8885E529C5B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC695FC3-A093-4F99-A13C-8885E529C5B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC695FC3-A093-4F99-A13C-8885E529C5B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D43E50-84B0-47FF-888E-7C8351368BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D43E50-84B0-47FF-888E-7C8351368BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D43E50-84B0-47FF-888E-7C8351368BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D43E50-84B0-47FF-888E-7C8351368BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2FCBC58-6CA9-4EA6-852E-EBB43E596F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FCBC58-6CA9-4EA6-852E-EBB43E596F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2FCBC58-6CA9-4EA6-852E-EBB43E596F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2FCBC58-6CA9-4EA6-852E-EBB43E596F19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{968C6AFE-1E13-4F9D-B8FC-28B2A2168C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968C6AFE-1E13-4F9D-B8FC-28B2A2168C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968C6AFE-1E13-4F9D-B8FC-28B2A2168C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968C6AFE-1E13-4F9D-B8FC-28B2A2168C9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,7 +9,7 @@
         Background="LightSteelBlue"
         Title="OpenControls.Wpf.TabHeaderControl Demonstration" Height="450" Width="800">
     <Window.Resources>
-        <Style x:Key="ArrowStyle" TargetType="Button">
+        <Style x:Key="StyleArrow1" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Width" Value="18"/>
             <Setter Property="Height" Value="18"/>
@@ -43,7 +43,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="LeftArrow" TargetType="Button">
+        <Style x:Key="StyleArrow2" TargetType="Button">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -84,6 +84,21 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <DataTemplate x:Key="ColorsComboBoxDataTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                <TextBlock Text="{Binding Name}" />
+            </StackPanel>
+        </DataTemplate>
+        <Style x:Key="StyleComboBox" TargetType="ComboBox">
+            <Setter Property="Padding" Value="4,3,4,3"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="StyleGroupBox" TargetType="GroupBox">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="Padding" Value="5,5,5,5"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -97,6 +112,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -107,8 +124,7 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <wpfcontrollibrary:TabHeaderControl Grid.Row="1" Grid.Column="1"
-            x:Name="_tabHeader1" ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader1_SelectionChanged"
-            SelectedItem="{Binding SelectedHeader, Mode=TwoWay}">
+            x:Name="_tabHeader1" ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader1_SelectionChanged">
             <wpfcontrollibrary:TabHeaderControl.DisplayMemberPath>HeaderText</wpfcontrollibrary:TabHeaderControl.DisplayMemberPath>
             <wpfcontrollibrary:TabHeaderControl.SelectedTabBackground>
                 <Binding Path="SelectedTabBackground" Mode="TwoWay"/>
@@ -142,16 +158,16 @@
             </wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>
         </wpfcontrollibrary:TabHeaderControl>
         <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Text="{Binding TabHeader1Body}"/>
-        <Button Grid.Row="1" Grid.Column="3" Name="_button1" Click="_button1_Click" Style="{StaticResource LeftArrow}">
+        <Button Grid.Row="1" Grid.Column="3" Name="_button1" Click="_button1_Click" Style="{StaticResource StyleArrow2}">
             <Button.LayoutTransform>
                 <RotateTransform Angle="270"/>
             </Button.LayoutTransform>
         </Button>
 
         <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" Text="{Binding TabHeader2Body}"/>
-        <wpfcontrollibrary:TabHeaderControl Grid.Row="5" Grid.Column="1"
-            x:Name="_tabHeader2" ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader2_SelectionChanged"
-            SelectedItem="{Binding SelectedHeader, Mode=TwoWay}" ArrowStyle="{StaticResource ArrowStyle}">
+        <wpfcontrollibrary:TabHeaderControl Grid.Row="5" Grid.Column="1" x:Name="_tabHeader2" 
+            ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader2_SelectionChanged"
+            ArrowStyle="{StaticResource StyleArrow1}">
             <wpfcontrollibrary:TabHeaderControl.DisplayMemberPath>HeaderText</wpfcontrollibrary:TabHeaderControl.DisplayMemberPath>
             <wpfcontrollibrary:TabHeaderControl.SelectedTabBackground>
                 <Binding Path="SelectedTabBackground" Mode="TwoWay"/>
@@ -188,14 +204,13 @@
             <wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>Gray
             </wpfcontrollibrary:TabHeaderControl.InactiveArrowBrush>
         </wpfcontrollibrary:TabHeaderControl>
-        <Button Grid.Row="5" Grid.Column="3" Name="_button2" Click="_button2_Click"  Style="{StaticResource LeftArrow}">
+        <Button Grid.Row="5" Grid.Column="3" Name="_button2" Click="_button2_Click"  Style="{StaticResource StyleArrow2}">
             <Button.LayoutTransform>
                 <RotateTransform Angle="270"/>
             </Button.LayoutTransform>
         </Button>
         <wpfcontrollibrary:TabHeaderControl Grid.Row="7" Grid.Column="1"
-            x:Name="_tabHeader3" ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader3_SelectionChanged"
-            SelectedItem="{Binding SelectedHeader, Mode=TwoWay}">
+            x:Name="_tabHeader3" ItemsSource="{Binding ListBoxItems}" SelectionChanged="_tabHeader3_SelectionChanged">
             <wpfcontrollibrary:TabHeaderControl.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="FrameworkElement.Margin" Value="0"/>
@@ -244,11 +259,36 @@
                 </Style>
             </wpfcontrollibrary:TabHeaderControl.ItemContainerStyle>
         </wpfcontrollibrary:TabHeaderControl>
-        <Button Grid.Row="7" Grid.Column="3" Name="_button3" Click="_button3_Click" Style="{StaticResource LeftArrow}">
+        <Button Grid.Row="7" Grid.Column="3" Name="_button3" Click="_button3_Click" Style="{StaticResource StyleArrow2}">
             <Button.LayoutTransform>
                 <RotateTransform Angle="270"/>
             </Button.LayoutTransform>
         </Button>
         <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="4" Text="{Binding TabHeader3Body}"/>
+
+        <GroupBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="4" Header="Settings" Style="{StaticResource StyleGroupBox}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="Selected Tab Background" HorizontalAlignment="Right"/>
+                <ComboBox Grid.Row="0" Grid.Column="2" x:Name="_comboBoxSelectedTabBackground" Style="{StaticResource StyleComboBox}" ItemTemplate="{StaticResource ColorsComboBoxDataTemplate}" SelectedValue="{Binding SelectedTabBackground, Mode=TwoWay}" SelectedValuePath="Name" Width="180"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="Unselected Tab Background" HorizontalAlignment="Right"/>
+                <ComboBox Grid.Row="2" Grid.Column="2" x:Name="_comboBoxUnselectedTabBackground" Style="{StaticResource StyleComboBox}" ItemTemplate="{StaticResource ColorsComboBoxDataTemplate}" SelectedValue="{Binding UnselectedTabBackground, Mode=TwoWay}" SelectedValuePath="Name" MinWidth="180"/>
+                <CheckBox Grid.Row="4" Grid.Column="0" Content="Show Tab Border" HorizontalAlignment="Right" VerticalAlignment="Center" IsChecked="{Binding ShowTabBorder}"/>
+                <Button Grid.Row="4" Grid.Column="2" Name="_buttonChooseFont" Content="Choose Font" Width="90" Click="_buttonChooseFont_Click" HorizontalAlignment="Left"/>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>

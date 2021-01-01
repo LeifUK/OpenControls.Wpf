@@ -127,7 +127,7 @@
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition Width="2"/>
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="1" FontSize="14" Foreground="{TemplateBinding Foreground}" 
+                                        <Label Grid.Column="1" FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding Foreground}" 
                                             Background="{TemplateBinding Background}" Width="Auto" Padding="2,0,2,0" Margin="0" 
                                             VerticalAlignment="Center">
                                             <TextBlock>

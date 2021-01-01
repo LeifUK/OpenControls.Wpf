@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Forms;
 
 namespace OpenControls.Wpf.TabHeaderControlDemo
 {
@@ -11,7 +13,10 @@ namespace OpenControls.Wpf.TabHeaderControlDemo
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ViewModel.MainViewModel();
+            _comboBoxSelectedTabBackground.ItemsSource = typeof(Colors).GetProperties();
+            _comboBoxUnselectedTabBackground.ItemsSource = typeof(Colors).GetProperties();
+            ViewModel.MainViewModel mainViewModel = new ViewModel.MainViewModel();
+            DataContext = mainViewModel;
         }
 
         private void _tabHeader1_SelectionChanged(object sender, System.EventArgs e)
@@ -29,18 +34,6 @@ namespace OpenControls.Wpf.TabHeaderControlDemo
         private void _tabHeader3_SelectionChanged(object sender, System.EventArgs e)
         {
             ViewModel.MainViewModel mainViewModel = DataContext as ViewModel.MainViewModel;
-            if (_tabHeader3.SelectedItem == null)
-            {
-                if (_tabHeader3.Items.Count > 0)
-                {
-                    _tabHeader3.SelectedItem = _tabHeader3.Items[0];
-                }
-                else
-                {
-                    mainViewModel.TabHeader3Body = null;
-                    return;
-                }
-            }
             mainViewModel.TabHeader3Body = (_tabHeader3.SelectedItem as ViewModel.TabHeaderItem).HeaderText;
         }
 
@@ -69,12 +62,12 @@ namespace OpenControls.Wpf.TabHeaderControlDemo
 
         internal static void DisplayItemsMenu(OpenControls.Wpf.TabHeaderControl.TabHeaderControl tabHeaderControl)
         {
-            ContextMenu contextMenu = new ContextMenu();
+            System.Windows.Controls.ContextMenu contextMenu = new System.Windows.Controls.ContextMenu();
             int i = 0;
             foreach (var item in tabHeaderControl.Items)
             {
                 ViewModel.TabHeaderItem tabHeaderItem = item as ViewModel.TabHeaderItem;
-                MenuItem menuItem = new MenuItem();
+                System.Windows.Controls.MenuItem menuItem = new System.Windows.Controls.MenuItem();
                 menuItem.Header = tabHeaderItem.HeaderText;
                 menuItem.IsChecked = item == tabHeaderControl.SelectedItem;
                 menuItem.CommandParameter = i;
@@ -99,6 +92,38 @@ namespace OpenControls.Wpf.TabHeaderControlDemo
         private void _button3_Click(object sender, RoutedEventArgs e)
         {
             DisplayItemsMenu(_tabHeader3);
+        }
+
+        private void SetFont(FontDialog fontDialog, OpenControls.Wpf.TabHeaderControl.TabHeaderControl tabHeaderControl)
+        {
+            tabHeaderControl.FontFamily = new FontFamily(fontDialog.Font.Name);
+            tabHeaderControl.FontSize = fontDialog.Font.Size * 96.0 / 72.0;
+            tabHeaderControl.FontWeight = fontDialog.Font.Bold ? FontWeights.Bold : FontWeights.Regular;
+            tabHeaderControl.FontStyle = fontDialog.Font.Italic ? FontStyles.Italic : FontStyles.Normal;
+
+        }
+        private void _buttonChooseFont_Click(object sender, RoutedEventArgs e)
+        {
+            FontDialog fontDialog = new FontDialog();
+            System.Drawing.FontStyle fontStyle = System.Drawing.FontStyle.Regular;
+            if (_tabHeader1.FontWeight == FontWeights.Bold)
+            {
+                fontStyle |= System.Drawing.FontStyle.Bold;
+            }
+            if (_tabHeader1.FontStyle == FontStyles.Italic)
+            {
+                fontStyle |= System.Drawing.FontStyle.Italic;
+            }
+
+            fontDialog.Font = new System.Drawing.Font(_tabHeader1.FontFamily.ToString(), (float)(_tabHeader1.FontSize * 72.0  / 96.0), fontStyle);
+
+            var result = fontDialog.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                SetFont(fontDialog, _tabHeader1);
+                SetFont(fontDialog, _tabHeader2);
+                SetFont(fontDialog, _tabHeader3);
+            }
         }
     }
 }

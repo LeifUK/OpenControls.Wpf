@@ -12,12 +12,9 @@ namespace OpenControls.Wpf.TabHeaderControlDemo.ViewModel
             ListBoxItems.Add(new TabHeaderItem() { ID = 3, Label = "A really quite long item" });
             SelectedTabForeground = System.Windows.Media.Brushes.Black;
             SelectedTabBackground = System.Windows.Media.Brushes.AliceBlue;
-            SelectedTabBorderBrush = System.Windows.Media.Brushes.Transparent;
-            SelectedTabBorderThickness = new System.Windows.Thickness(1, 0, 0, 0);
             UnselectedTabForeground = System.Windows.Media.Brushes.White;
             UnselectedTabBackground = System.Windows.Media.Brushes.CornflowerBlue;
-            UnselectedTabBorderBrush = System.Windows.Media.Brushes.Transparent;
-            UnselectedTabBorderThickness = new System.Windows.Thickness(1, 0, 0, 0);
+            ShowTabBorder = false;
         }
 
         private System.Collections.ObjectModel.ObservableCollection<TabHeaderItem> _listBoxItems;
@@ -143,6 +140,24 @@ namespace OpenControls.Wpf.TabHeaderControlDemo.ViewModel
             {
                 _unselectedTabBorderThickness = value;
                 NotifyPropertyChanged("UnselectedTabBorderThickness");
+            }
+        }
+
+        private bool _showTabBorder;
+        public bool ShowTabBorder
+        {
+            get
+            {
+                return _showTabBorder;
+            }
+            set
+            {
+                _showTabBorder = value;
+                SelectedTabBorderThickness = value ? new System.Windows.Thickness(1) : new System.Windows.Thickness(1, 0, 0, 0);
+                SelectedTabBorderBrush = value ? System.Windows.Media.Brushes.Gray : System.Windows.Media.Brushes.Transparent;
+                UnselectedTabBorderThickness = value ? new System.Windows.Thickness(1) : new System.Windows.Thickness(1, 0, 0, 0);
+                UnselectedTabBorderBrush = value ? System.Windows.Media.Brushes.Gray : System.Windows.Media.Brushes.Transparent;
+                NotifyPropertyChanged("ShowTabBorder");
             }
         }
 

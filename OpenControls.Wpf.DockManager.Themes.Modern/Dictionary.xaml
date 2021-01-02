@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:System="clr-namespace:System;assembly=mscorlib"
                     xmlns:SystemWindows="clr-namespace:System.Windows;assembly=PresentationFramework"
-                    xmlns:woc="clr-namespace:OpenControls.Wpf.TabHeaderControl;assembly=OpenControls.Wpf.TabHeaderControl">
-    
+                    xmlns:TabHeaderControl="clr-namespace:OpenControls.Wpf.TabHeaderControl;assembly=OpenControls.Wpf.TabHeaderControl">
+
     <!-- Common styles -->
 
     <Style x:Key="ScrollIndicatorStyle" TargetType="Button">
@@ -24,10 +24,10 @@
                             <Setter TargetName="_triangle" Property="Fill" Value="Black" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="_triangle" Property="Fill" Value="{Binding Path=InactiveArrowBrush, RelativeSource={RelativeSource AncestorType={x:Type woc:TabHeaderControl}}}" />
+                            <Setter TargetName="_triangle" Property="Fill" Value="{Binding Path=InactiveArrowBrush, RelativeSource={RelativeSource AncestorType={x:Type TabHeaderControl:TabHeaderControl}}}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="True">
-                            <Setter TargetName="_triangle" Property="Fill" Value="{Binding Path=ActiveArrowBrush, RelativeSource={RelativeSource AncestorType={x:Type woc:TabHeaderControl}}}" />
+                            <Setter TargetName="_triangle" Property="Fill" Value="{Binding Path=ActiveArrowBrush, RelativeSource={RelativeSource AncestorType={x:Type TabHeaderControl:TabHeaderControl}}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -320,7 +320,7 @@
                             <Label Grid.Column="1" x:Name="_label" FontSize="12" FontFamily="Arial" Foreground="Black" Width="Auto" Padding="2,0,2,0" Margin="0" VerticalAlignment="Center">
                                 <ContentPresenter />
                             </Label>
-                            <Button Grid.Column="3" x:Name="_buttonCloseTab" Command="{Binding CloseTabCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=woc:TabHeaderControl}}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" Style="{StaticResource CloseTabButtonStyle}" Padding="0" Margin="0,1,0,1"/>
+                            <Button Grid.Column="3" x:Name="_buttonCloseTab" Command="{Binding CloseTabCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabHeaderControl:TabHeaderControl}}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" Style="{StaticResource CloseTabButtonStyle}" Padding="0" Margin="0,1,0,1"/>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -387,14 +387,14 @@
                             <Label Grid.Column="1" x:Name="_label" ToolTip="{Binding Path=DataContext.Value.Tooltip,RelativeSource={RelativeSource Self}}" FontSize="12" FontFamily="Arial" Foreground="Black" Width="Auto" Padding="2,0,2,0" Margin="0" VerticalAlignment="Center" VerticalContentAlignment="Center" >
                                 <ContentPresenter />
                             </Label>
-                            <Button Grid.Column="3" x:Name="_buttonCloseTab" Command="{Binding CloseTabCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=woc:TabHeaderControl}}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" Style="{StaticResource CloseTabButtonStyle}" VerticalAlignment="Center" Margin="0,1,0,1"/>
+                            <Button Grid.Column="3" x:Name="_buttonCloseTab" Command="{Binding CloseTabCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabHeaderControl:TabHeaderControl}}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" Style="{StaticResource CloseTabButtonStyle}" VerticalAlignment="Center" Margin="0,1,0,1"/>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" Value="True" />
-                                <Condition Binding="{Binding Path=IsActive, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=woc:TabHeaderControl}}" Value="True" />
+                                <Condition Binding="{Binding Path=IsActive, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabHeaderControl:TabHeaderControl}}" Value="True" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="_label" Property="Foreground" Value="Black"/>
                             <Setter TargetName="_border" Property="Background" Value="White"/>
@@ -405,7 +405,7 @@
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" Value="True" />
-                                <Condition Binding="{Binding Path=IsActive, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=woc:TabHeaderControl}}" Value="False" />
+                                <Condition Binding="{Binding Path=IsActive, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabHeaderControl:TabHeaderControl}}" Value="False" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="_label" Property="Foreground" Value="Black"/>
                             <Setter TargetName="_border" Property="Background" Value="Gainsboro"/>

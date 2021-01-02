@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:System="clr-namespace:System;assembly=mscorlib"
                     xmlns:SystemWindows="clr-namespace:System.Windows;assembly=PresentationFramework"
-                    xmlns:woc="clr-namespace:OpenControls.Wpf.TabHeaderControl;assembly=OpenControls.Wpf.TabHeaderControl">
+                    xmlns:DockManagerControls="clr-namespace:OpenControls.Wpf.DockManager.Controls;assembly=OpenControls.Wpf.DockManager"
+                    xmlns:TabHeaderControl="clr-namespace:OpenControls.Wpf.TabHeaderControl;assembly=OpenControls.Wpf.TabHeaderControl">
 
     <!-- Common styles -->
 
@@ -270,7 +271,7 @@
                             <Label Grid.Column="1" x:Name="_label" FontSize="12" FontFamily="Arial" Foreground="Black" Width="Auto" Padding="2,0,2,0" Margin="0" VerticalAlignment="Center">
                                 <ContentPresenter />
                             </Label>
-                            <Button Grid.Column="3" x:Name="_buttonCloseTab" Command="{Binding CloseTabCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=woc:TabHeaderControl}}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" Foreground="Gray" BorderThickness="0" Background="Transparent" Style="{StaticResource CloseButtonStyle}" />
+                            <Button Grid.Column="3" x:Name="_buttonCloseTab" Command="{Binding CloseTabCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabHeaderControl:TabHeaderControl}}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" Foreground="Gray" BorderThickness="0" Background="Transparent" Style="{StaticResource CloseButtonStyle}" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -333,14 +334,14 @@
                             <Label Grid.Column="1" x:Name="_label" FontSize="12" FontFamily="Arial" Foreground="Black" Width="Auto" Padding="2,0,2,0" Margin="0" VerticalAlignment="Center">
                                 <ContentPresenter />
                             </Label>
-                            <Button Grid.Column="3" x:Name="_buttonCloseTab" Command="{Binding CloseTabCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=woc:TabHeaderControl}}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" Foreground="Gray" BorderThickness="0" Background="Transparent" Style="{StaticResource CloseButtonStyle}" />
+                            <Button Grid.Column="3" x:Name="_buttonCloseTab" Command="{Binding CloseTabCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabHeaderControl:TabHeaderControl}}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" Foreground="Gray" BorderThickness="0" Background="Transparent" Style="{StaticResource CloseButtonStyle}" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" Value="True" />
-                                <Condition Binding="{Binding Path=IsActive, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=woc:TabHeaderControl}}" Value="True" />
+                                <Condition Binding="{Binding Path=IsActive, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabHeaderControl:TabHeaderControl}}" Value="True" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="_buttonCloseTab" Property="Background" Value="Transparent"/>
                             <Setter TargetName="_label" Property="Foreground" Value="Black"/>
@@ -353,7 +354,7 @@
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" Value="True" />
-                                <Condition Binding="{Binding Path=IsActive, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=woc:TabHeaderControl}}" Value="false" />
+                                <Condition Binding="{Binding Path=IsActive, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabHeaderControl:TabHeaderControl}}" Value="false" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="_buttonCloseTab" Property="Background" Value="Transparent"/>
                             <Setter TargetName="_label" Property="Foreground" Value="Black"/>
@@ -427,13 +428,13 @@
                             <Label Grid.Row="1" Grid.Column="1" FontSize="12" FontFamily="Arial" Foreground="White" Width="Auto" Padding="2,0,2,0" Margin="0" VerticalAlignment="Center">
                                 <ContentPresenter />
                                 <Label.LayoutTransform>
-                                    <RotateTransform Angle="{Binding TextAngle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=woc:ToolListBox}}" CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="{Binding TextAngle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DockManagerControls:ToolListBox}}" CenterX="0.5" CenterY="0.5"/>
                                 </Label.LayoutTransform>
                             </Label>
                             <Rectangle Grid.Row="3" Grid.Column="1" x:Name="_rectangle" Fill="#3b4f81" Height="6" HorizontalAlignment="Stretch"/>
                         </Grid>
                         <Border.LayoutTransform>
-                            <RotateTransform Angle="{Binding TextAngle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=woc:ToolListBox}}" CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="{Binding TextAngle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DockManagerControls:ToolListBox}}" CenterX="0.5" CenterY="0.5"/>
                         </Border.LayoutTransform>
                     </Border>
                     <ControlTemplate.Triggers>

@@ -111,6 +111,10 @@
       <Project>{c4d43e50-84b0-47ff-888e-7c8351368bd6}</Project>
       <Name>OpenControls.Wpf.DockManager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenControls.Wpf.Utilities\OpenControls.Wpf.Utilities.csproj">
+      <Project>{117f1160-81bf-42cd-b48c-e73bec059b30}</Project>
+      <Name>OpenControls.Wpf.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />

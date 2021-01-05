@@ -53,9 +53,6 @@
     <Compile Include="Controls\ToolListBox.xaml.cs">
       <DependentUpon>ToolListBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converters\BrushToColourConverter.cs" />
-    <Compile Include="Converters\CornerRadiusToStringConverter.cs" />
-    <Compile Include="Converters\ThicknessToStringConverter.cs" />
     <Compile Include="DockPane.cs" />
     <Compile Include="DockPaneManager.cs" />
     <Compile Include="DocumentContainer.cs" />

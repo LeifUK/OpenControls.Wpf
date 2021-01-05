@@ -49,6 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command.cs" />
+    <Compile Include="ValueConverters\BrushToColourConverter.cs" />
+    <Compile Include="ValueConverters\CornerRadiusToStringConverter.cs" />
+    <Compile Include="ValueConverters\EnumComparisonConverter .cs" />
+    <Compile Include="ValueConverters\EnumToVisibilityConverter.cs" />
+    <Compile Include="ValueConverters\IntToHexStringConverter.cs" />
+    <Compile Include="ValueConverters\InverseBooleanConverter.cs" />
+    <Compile Include="ValueConverters\InverseBooleanToVisibilityConverter.cs" />
+    <Compile Include="ValueConverters\ObjectToBooleanConverter.cs" />
+    <Compile Include="ValueConverters\ThicknessToStringConverter.cs" />
     <Compile Include="Windows.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -73,6 +82,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\Dictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

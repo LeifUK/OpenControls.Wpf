@@ -2,7 +2,7 @@
 using System.Windows.Media;
 using System.Windows.Data;
 
-namespace OpenControls.Wpf.ValueUtilities.Converters
+namespace OpenControls.Wpf.Utilities.ValueConverters
 {
     internal class BrushToColourConverter : IValueConverter
     {

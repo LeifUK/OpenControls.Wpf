@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Data;
 
-namespace OpenControls.Wpf.ValueUtilities.Converters
+namespace OpenControls.Wpf.Utilities.ValueConverters
 {
     [ValueConversion(typeof(object), typeof(Boolean))]
     class ObjectToBooleanConverter : IValueConverter

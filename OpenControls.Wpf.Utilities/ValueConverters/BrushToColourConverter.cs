@@ -4,7 +4,7 @@ using System.Windows.Data;
 
 namespace OpenControls.Wpf.Utilities.ValueConverters
 {
-    internal class BrushToColourConverter : IValueConverter
+    public class BrushToColourConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {

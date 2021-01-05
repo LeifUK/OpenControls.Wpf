@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace OpenControls.Wpf.Utilities.ValueConverters
 {
-public class EnumComparisonConverter : IValueConverter
+    public class EnumComparisonConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

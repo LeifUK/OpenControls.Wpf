@@ -5,7 +5,7 @@ using System.Windows.Data;
 namespace OpenControls.Wpf.Utilities.ValueConverters
 {
     [ValueConversion(typeof(bool), typeof(Visibility))]
-    internal class InverseBooleanToVisibilityConverter : IValueConverter
+    public class InverseBooleanToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {

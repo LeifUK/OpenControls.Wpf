@@ -58,6 +58,15 @@
     <Compile Include="ValueConverters\InverseBooleanToVisibilityConverter.cs" />
     <Compile Include="ValueConverters\ObjectToBooleanConverter.cs" />
     <Compile Include="ValueConverters\ThicknessToStringConverter.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\ChooseStringViewModel.cs" />
+    <Compile Include="ViewModel\InputTextViewModel.cs" />
+    <Compile Include="View\ChooseStringView.xaml.cs">
+      <DependentUpon>ChooseStringView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InputTextView.xaml.cs">
+      <DependentUpon>InputTextView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -84,7 +93,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\ChooseStringView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Dictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InputTextView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

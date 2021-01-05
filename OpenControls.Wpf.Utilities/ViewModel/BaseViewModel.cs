@@ -1,5 +1,5 @@
 ﻿
-namespace OpenControls.Wpf.DatabaseDialogs.ViewModel
+namespace OpenControls.Wpf.Utilities.ViewModel
 {
     public class BaseViewModel : System.ComponentModel.INotifyPropertyChanged
     {

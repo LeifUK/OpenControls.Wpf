@@ -4,7 +4,7 @@ using System.Windows.Data;
 namespace OpenControls.Wpf.Utilities.ValueConverters
 {
     [ValueConversion(typeof(object), typeof(Boolean))]
-    class ObjectToBooleanConverter : IValueConverter
+    public class ObjectToBooleanConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {

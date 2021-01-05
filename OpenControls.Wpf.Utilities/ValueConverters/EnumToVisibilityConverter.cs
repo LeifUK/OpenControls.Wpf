@@ -3,7 +3,7 @@ using System.Windows.Data;
 
 namespace OpenControls.Wpf.Utilities.ValueConverters
 {
-    internal class EnumToVisibilityConverter : IValueConverter
+    public class EnumToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {

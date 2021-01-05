@@ -49,31 +49,20 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\NewDatabaseViewModel.cs" />
     <Compile Include="ViewModel\OpenDatabaseViewModel.cs" />
-    <Compile Include="View\EnumComparisonConverter .cs" />
-    <Compile Include="View\InverseBooleanConverter.cs" />
     <Compile Include="View\NewDatabaseView.xaml.cs">
       <DependentUpon>NewDatabaseView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OpenDatabaseView.xaml.cs">
       <DependentUpon>OpenDatabaseView.xaml</DependentUpon>
     </Compile>
-    <Page Include="UserControl1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="Model\DatabaseConfiguration.cs" />
     <Compile Include="Model\DatabaseProvider.cs" />
     <Compile Include="Model\Encryption.cs" />
     <Compile Include="Model\IConfigurationSerialiser.cs" />
     <Compile Include="Model\IDatabaseConfiguration.cs" />
     <Compile Include="Model\IEncryption.cs" />
-    <Compile Include="UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="View\Dictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,6 +103,10 @@
     <ProjectReference Include="..\OpenControls.Wpf.Serialisation\OpenControls.Wpf.Serialisation.csproj">
       <Project>{4cd18485-9543-41d1-956c-55138b655e56}</Project>
       <Name>OpenControls.Wpf.Serialisation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenControls.Wpf.Utilities\OpenControls.Wpf.Utilities.csproj">
+      <Project>{117f1160-81bf-42cd-b48c-e73bec059b30}</Project>
+      <Name>OpenControls.Wpf.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

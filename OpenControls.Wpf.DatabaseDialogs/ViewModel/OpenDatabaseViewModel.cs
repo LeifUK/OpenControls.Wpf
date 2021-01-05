@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace OpenControls.Wpf.DatabaseDialogs.ViewModel
 {
-    public class OpenDatabaseViewModel : BaseViewModel
+    public class OpenDatabaseViewModel : OpenControls.Wpf.Utilities.ViewModel.BaseViewModel
     {
         public OpenDatabaseViewModel(Model.IDatabaseConfiguration iDatabaseConfiguration)
         {

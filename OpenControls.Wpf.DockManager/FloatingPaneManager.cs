@@ -211,8 +211,13 @@ namespace OpenControls.Wpf.DockManager
                         _windowLocationPane.ShowIcons(WindowLocation.Middle);
                         ViewContainer viewContainer = (iFloatingPane.IViewContainer as ViewContainer);
                         Point topLeftPanePoint = viewContainer.PointToScreen(new Point(0, 0));
-                        _windowLocationPane.Left = topLeftPanePoint.X;
-                        _windowLocationPane.Top = topLeftPanePoint.Y;
+                        
+                        PresentationSource source = PresentationSource.FromVisual(viewContainer);
+                        double dpix = source.CompositionTarget.TransformToDevice.M11;
+                        double dpiy = source.CompositionTarget.TransformToDevice.M22;
+
+                        _windowLocationPane.Left = topLeftPanePoint.X / dpix;
+                        _windowLocationPane.Top = topLeftPanePoint.Y / dpiy;
                         _windowLocationPane.Width = viewContainer.ActualWidth;
                         _windowLocationPane.Height = viewContainer.ActualHeight;
                         _windowLocationPane.Show();
@@ -256,8 +261,13 @@ namespace OpenControls.Wpf.DockManager
                                 _windowLocationPane.ShowIcons(WindowLocation.Middle);
                             }
                             Point topLeftPanePoint = pane.PointToScreen(new Point(0, 0));
-                            _windowLocationPane.Left = topLeftPanePoint.X;
-                            _windowLocationPane.Top = topLeftPanePoint.Y;
+
+                            PresentationSource source = PresentationSource.FromVisual((UIElement)pane);
+                            double dpix = source.CompositionTarget.TransformToDevice.M11;
+                            double dpiy = source.CompositionTarget.TransformToDevice.M22;
+
+                            _windowLocationPane.Left = topLeftPanePoint.X / dpix;
+                            _windowLocationPane.Top = topLeftPanePoint.Y / dpiy;
                             _windowLocationPane.Width = SelectedPane.ActualWidth;
                             _windowLocationPane.Height = SelectedPane.ActualHeight;
                             _windowLocationPane.Show();
@@ -273,8 +283,13 @@ namespace OpenControls.Wpf.DockManager
                         }
 
                         Point topLeftRootPoint = IFloatingPaneHost.RootPane.PointToScreen(new Point(0, 0));
-                        _sideLocationPane.Left = topLeftRootPoint.X;
-                        _sideLocationPane.Top = topLeftRootPoint.Y;
+
+                        PresentationSource source = PresentationSource.FromVisual(IFloatingPaneHost.RootPane);
+                        double dpix = source.CompositionTarget.TransformToDevice.M11;
+                        double dpiy = source.CompositionTarget.TransformToDevice.M22;
+
+                        _sideLocationPane.Left = topLeftRootPoint.X / dpix;
+                        _sideLocationPane.Top = topLeftRootPoint.Y / dpiy;
                         _sideLocationPane.Width = IFloatingPaneHost.RootPane.ActualWidth;
                         _sideLocationPane.Height = IFloatingPaneHost.RootPane.ActualHeight;
                         _sideLocationPane.Show();

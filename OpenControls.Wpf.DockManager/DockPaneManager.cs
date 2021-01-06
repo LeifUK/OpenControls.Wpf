@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using OpenControls.Wpf.Utilities;
 
 namespace OpenControls.Wpf.DockManager
 {
@@ -157,7 +158,8 @@ namespace OpenControls.Wpf.DockManager
                 OpenControls.Wpf.Utilities.Windows.SendLeftMouseButtonDown(hWnd);
             }
 
-            Point cursorPositionOnScreen = OpenControls.Wpf.Utilities.Windows.GetCursorPosition();
+            Point cursorPositionOnScreen = Windows.ScaleByDpi(Windows.GetCursorPosition());
+            
             floatingPane.Left = cursorPositionOnScreen.X - 30;
             floatingPane.Top = cursorPositionOnScreen.Y - 30;
             floatingPane.Width = dockPane.ActualWidth;

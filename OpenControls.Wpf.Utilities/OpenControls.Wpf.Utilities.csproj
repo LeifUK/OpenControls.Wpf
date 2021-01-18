@@ -64,6 +64,7 @@
     <Compile Include="View\ChooseStringView.xaml.cs">
       <DependentUpon>ChooseStringView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ExtensionMethods.cs" />
     <Compile Include="View\InputTextView.xaml.cs">
       <DependentUpon>InputTextView.xaml</DependentUpon>
     </Compile>

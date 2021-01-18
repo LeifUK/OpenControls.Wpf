@@ -5,34 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight"
+        Background="#F0F0F0"
         Title="{Binding Title}" Height="150" Width="400">
     <Window.Resources>
         <ResourceDictionary>
             <GridLength x:Key="RowSpacing">10</GridLength>
-            <Brush x:Key="StatusBarBackgroundBrush">LightGray</Brush>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="./Dictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>    
-    <Grid Background="Gainsboro">
+    <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="1" Grid.Column="1" Content="{Binding Label}" Style="{StaticResource LabelStyle}" HorizontalAlignment="Stretch"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Stretch"/>
-        <Grid Grid.Row="5" Grid.Column="1">
+        <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Stretch" MinWidth="200"/>
+        <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Left">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>

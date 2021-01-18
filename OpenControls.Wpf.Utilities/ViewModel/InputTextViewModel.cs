@@ -1,6 +1,6 @@
 ﻿namespace OpenControls.Wpf.Utilities.ViewModel
 {
-    internal class InputTextViewModel : BaseViewModel
+    public class InputTextViewModel : BaseViewModel
     {
         private string _title;
         public string Title
@@ -48,12 +48,13 @@
                     {
                         return;
                     }
-                }
-                foreach (var val in value)
-                {
-                    if (!char.IsLetterOrDigit(val) && val != ' ')
+
+                    foreach (var val in value)
                     {
-                        return;
+                        if (!char.IsLetterOrDigit(val) && val != ' ')
+                        {
+                            return;
+                        }
                     }
                 }
                         

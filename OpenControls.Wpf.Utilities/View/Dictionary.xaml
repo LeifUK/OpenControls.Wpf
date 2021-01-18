@@ -13,6 +13,7 @@
     <Style x:Key="LabelStyle" TargetType="Label">
         <Setter Property="Padding" Value="0"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
     </Style>
     <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
         <Setter Property="Padding" Value="0"/>
@@ -40,6 +41,9 @@
     <Style x:Key="Button40Style" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
         <Setter Property="Width" Value="40"/>
     </Style>
+    <Style x:Key="Button60Style" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+        <Setter Property="Width" Value="60"/>
+    </Style>
     <Style x:Key="Button80Style" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
         <Setter Property="Width" Value="80"/>
     </Style>
@@ -54,5 +58,25 @@
         <Setter Property="Padding" Value="0,0,0,2"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
-
+    <Style x:Key="DataGridStyle" TargetType="DataGrid">
+        <Setter Property="IsTabStop" Value="True"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="AlternatingRowBackground" Value="White"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="AlternationCount" Value="2"/>
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="RowHeaderWidth" Value="0"/>
+        <Setter Property="VerticalGridLinesBrush" Value="LightSteelBlue"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="LightSteelBlue"/>
+        <Setter Property="CellStyle">
+            <Setter.Value>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

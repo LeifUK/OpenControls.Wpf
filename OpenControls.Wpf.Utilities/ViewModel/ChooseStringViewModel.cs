@@ -1,6 +1,6 @@
 ﻿namespace OpenControls.Wpf.Utilities.ViewModel
 {
-    internal class ChooseStringViewModel : BaseViewModel
+    public class ChooseStringViewModel : BaseViewModel
     {
         public ChooseStringViewModel()
         {

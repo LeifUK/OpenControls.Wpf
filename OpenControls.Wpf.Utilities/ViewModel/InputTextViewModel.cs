@@ -39,25 +39,6 @@
             }
             set
             {
-                /*
-                 * Only allow alphanumeric and spaces, and cannot start with a digit
-                 */
-                if (!string.IsNullOrEmpty(value))
-                {
-                    if (char.IsDigit(value[0]))
-                    {
-                        return;
-                    }
-
-                    foreach (var val in value)
-                    {
-                        if (!char.IsLetterOrDigit(val) && val != ' ')
-                        {
-                            return;
-                        }
-                    }
-                }
-                        
                 _text = value;
                 NotifyPropertyChanged("Text");
             }

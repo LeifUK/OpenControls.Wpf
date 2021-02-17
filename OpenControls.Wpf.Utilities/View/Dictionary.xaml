@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:OpenControls.Wpf.Utilities.ValueConverters">
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <local:EnumComparisonConverter x:Key="EnumComparisonConverter" />
     <local:InverseBooleanConverter x:Key="InverseBooleanConverter" />
     <local:BrushToColourConverter x:Key="BrushToColourConverter" />

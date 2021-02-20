@@ -39,7 +39,13 @@ namespace OpenControls.Wpf.Utilities
             {
                 return new Point(0, 0);
             }
+
             return new Point(point.X, point.Y);
+        }
+
+        public static Point ScaleByDpi(Point point)
+        {
+            return User32.ConvertPixelsToUnits(point);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Linq;
+using OpenControls.Wpf.Utilities;
 
 namespace OpenControls.Wpf.DockManager
 {
@@ -33,7 +34,7 @@ namespace OpenControls.Wpf.DockManager
             UserControl userControl = toolListBoxItem.IViewContainer.ExtractUserControl(toolListBoxItem.Index);
             unpinnedToolPane.ToolPane.IViewContainer.AddUserControl(userControl);
             unpinnedToolPane.ToolPane.HideCommandsButton();
-            Point topLeftPoint = IUnpinnedToolHost.RootPane.PointToScreen(new Point(0, 0));
+            Point topLeftPoint = Windows.ScaleByDpi(IUnpinnedToolHost.RootPane.PointToScreen(new Point(0, 0)));
             unpinnedToolPane.Left = topLeftPoint.X;
             unpinnedToolPane.Top = topLeftPoint.Y;
             if ((windowLocation == WindowLocation.TopSide) || (windowLocation == WindowLocation.BottomSide))
@@ -238,7 +239,7 @@ namespace OpenControls.Wpf.DockManager
         {
             if (_activeUnpinnedToolPane != null)
             {
-                Point topLeftPoint = IUnpinnedToolHost.RootPane.PointToScreen(new Point(0, 0));
+                Point topLeftPoint = Windows.ScaleByDpi(IUnpinnedToolHost.RootPane.PointToScreen(new Point(0, 0)));
                 double left = topLeftPoint.X;
                 double top = topLeftPoint.Y;
                 switch (_activeToolListBox.WindowLocation)

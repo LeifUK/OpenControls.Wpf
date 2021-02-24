@@ -62,13 +62,11 @@
     <Compile Include="Model\AxisLabels.cs" />
     <Compile Include="Model\Configuration.cs" />
     <Compile Include="Model\ConfigurationItem.cs" />
-    <Compile Include="Model\ConfigurationSerialiser.cs" />
     <Compile Include="Model\IConfiguration.cs" />
     <Compile Include="Model\ILabelFormatter.cs" />
     <Compile Include="Model\LabelInfo.cs" />
     <Compile Include="Model\XYLabelPosition.cs" />
     <Compile Include="Model\ConfigurationChangedEventHandler.cs" />
-    <Compile Include="Model\IConfigurationSerialiser.cs" />
     <Compile Include="Model\ShadingAlgorithm.cs" />
     <Compile Include="Model\ShadingMethod.cs" />
     <Compile Include="Model\Vertex.cs" />
@@ -126,6 +124,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OpenControls.Wpf.Serialisation\OpenControls.Wpf.Serialisation.csproj">
+      <Project>{4cd18485-9543-41d1-956c-55138b655e56}</Project>
+      <Name>OpenControls.Wpf.Serialisation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenControls.Wpf.Utilities\OpenControls.Wpf.Utilities.csproj">
       <Project>{117f1160-81bf-42cd-b48c-e73bec059b30}</Project>
       <Name>OpenControls.Wpf.Utilities</Name>

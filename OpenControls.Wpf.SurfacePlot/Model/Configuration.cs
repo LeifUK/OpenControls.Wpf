@@ -32,7 +32,7 @@
 
         #region IRawDataConfiguration
 
-        public void Load(Model.IConfigurationSerialiser configurationSerialiser)
+        public void Load(OpenControls.Wpf.Serialisation.IConfigurationSerialiser configurationSerialiser)
         {
             Zoom = configurationSerialiser.ReadEntry("Zoom", Zoom);
             ZScale = configurationSerialiser.ReadEntry("ZScale", ZScale);
@@ -59,7 +59,7 @@
             RedLevel = configurationSerialiser.ReadEntry("RedLevel", RedLevel);
         }
 
-        public void Save(Model.IConfigurationSerialiser configurationSerialiser)
+        public void Save(OpenControls.Wpf.Serialisation.IConfigurationSerialiser configurationSerialiser)
         {
             configurationSerialiser.WriteEntry("Zoom", Zoom);
             configurationSerialiser.WriteEntry("ZScale", ZScale);

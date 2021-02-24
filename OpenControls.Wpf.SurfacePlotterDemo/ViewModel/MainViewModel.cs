@@ -6,8 +6,8 @@ namespace OpenControls.Wpf.SurfacePlotterDemo.ViewModel
     {
         public MainViewModel()
         {
-            IConfigurationSerialiser = new SurfacePlot.Model.ConfigurationSerialiser();
-            (IConfigurationSerialiser as SurfacePlot.Model.ConfigurationSerialiser).CurrentRegistryKey = OpenRegKey();
+            IConfigurationSerialiser = new OpenControls.Wpf.Serialisation.RegistryItemSerialiser(RegKey());
+            (IConfigurationSerialiser as OpenControls.Wpf.Serialisation.RegistryItemSerialiser).OpenKey();
 
             IConfiguration = new OpenControls.Wpf.SurfacePlot.Model.Configuration();
             Speeds = new ObservableCollection<int>();
@@ -18,31 +18,13 @@ namespace OpenControls.Wpf.SurfacePlotterDemo.ViewModel
             SelectedSpeed = 1;
         }
 
-        private Microsoft.Win32.RegistryKey OpenRegKey()
+        private string RegKey()
         {
-            string path = System.Environment.Is64BitOperatingSystem ? @"SOFTWARE\Wow6432Node\OpenControls.Wpf.SurfacePlotDemo" : @"SOFTWARE\OpenControls.Wpf.SurfacePlotDemo";
-            Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(path, true);
-            if (key == null)
-            {
-                key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(path);
-            }
-
-            if (key == null)
-            {
-                return null;
-            }
-
-            Microsoft.Win32.RegistryKey touchHubKey = key.OpenSubKey("RawDataSettings", true);
-            if (touchHubKey == null)
-            {
-                touchHubKey = key.CreateSubKey("RawDataSettings");
-            }
-
-            return touchHubKey;
+            return System.Environment.Is64BitOperatingSystem ? @"SOFTWARE\Wow6432Node\OpenControls.Wpf.SurfacePlotDemo" : @"SOFTWARE\OpenControls.Wpf.SurfacePlotDemo";
         }
 
         public readonly OpenControls.Wpf.SurfacePlot.Model.IConfiguration IConfiguration;
-        private readonly OpenControls.Wpf.SurfacePlot.Model.IConfigurationSerialiser IConfigurationSerialiser;
+        private readonly OpenControls.Wpf.Serialisation.IConfigurationSerialiser IConfigurationSerialiser;
 
         public void Load()
         {

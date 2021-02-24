@@ -5,8 +5,8 @@
         // Signalled whenever a configuration setting is changed
         event Model.ConfigurationChangedEventHandler ConfigurationChanged;
 
-        void Load(IConfigurationSerialiser configurationSerialiser);
-        void Save(IConfigurationSerialiser configurationSerialiser);
+        void Load(OpenControls.Wpf.Serialisation.IConfigurationSerialiser configurationSerialiser);
+        void Save(OpenControls.Wpf.Serialisation.IConfigurationSerialiser configurationSerialiser);
 
         int Zoom { get; set; }
         int MaximumZoom { get; }

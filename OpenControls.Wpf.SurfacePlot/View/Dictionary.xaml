@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:OpenControls.Wpf.SurfacePlot.View">
+    <Brush x:Key="BackgroundBrush">#FAFAFA</Brush>
+    <!--<ImageBrush x:Key="BackgroundImageBrush" ImageSource="./../Resources/TouchNetix.png" TileMode="Tile" ViewportUnits="Absolute"  Viewport="0,0,371,118" Opacity="0.02"/>-->
+    <Brush x:Key="FontBrush">Black</Brush>
+    <System:Double x:Key="FontSize">12</System:Double>
+    <System:Double x:Key="ButtonWidth">80</System:Double>
+    <!-- Warning => MaximumZScale and MinimumZScale are log base 2 of the actual limits -->
+    <System:Double x:Key="MinimumZScale">1</System:Double>
+    <System:Double x:Key="MaximumZScale">20</System:Double>
+    <System:Double x:Key="MinimumPerspective">1.0</System:Double>
+    <System:Double x:Key="MaximumPerspective">2.0</System:Double>
+</ResourceDictionary>

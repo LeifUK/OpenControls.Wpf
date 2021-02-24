@@ -37,6 +37,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.DockManage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.DockManager.Themes.VS2019", "OpenControls.Wpf.DockManager.Themes.VS2019\OpenControls.Wpf.DockManager.Themes.VS2019.csproj", "{968C6AFE-1E13-4F9D-B8FC-28B2A2168C9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.SurfacePlot", "OpenControls.Wpf.SurfacePlot\OpenControls.Wpf.SurfacePlot.csproj", "{546D9E1E-3B53-4CFB-9BAE-F621BCAA41AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.SurfacePlotterDemo", "OpenControls.Wpf.SurfacePlotterDemo\OpenControls.Wpf.SurfacePlotterDemo.csproj", "{3EE8B1D4-F314-4EE3-92E9-E98809693C81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CABBC1C4-BFCE-43DE-917F-6DB564C804CB}"
+	ProjectSection(SolutionItems) = preProject
+		OpenControls.WinForms.SurfacePlotterDemo\OpenControls.WinForms.SurfacePlotterDemo.csproj = OpenControls.WinForms.SurfacePlotterDemo\OpenControls.WinForms.SurfacePlotterDemo.csproj
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.WinForms.SurfacePlotterDemo", "OpenControls.WinForms.SurfacePlotterDemo\OpenControls.WinForms.SurfacePlotterDemo.csproj", "{D643C630-81C7-4D97-B519-992D777A4CD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +122,18 @@ Global
 		{968C6AFE-1E13-4F9D-B8FC-28B2A2168C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{968C6AFE-1E13-4F9D-B8FC-28B2A2168C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{968C6AFE-1E13-4F9D-B8FC-28B2A2168C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{546D9E1E-3B53-4CFB-9BAE-F621BCAA41AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546D9E1E-3B53-4CFB-9BAE-F621BCAA41AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546D9E1E-3B53-4CFB-9BAE-F621BCAA41AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546D9E1E-3B53-4CFB-9BAE-F621BCAA41AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE8B1D4-F314-4EE3-92E9-E98809693C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE8B1D4-F314-4EE3-92E9-E98809693C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE8B1D4-F314-4EE3-92E9-E98809693C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE8B1D4-F314-4EE3-92E9-E98809693C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D643C630-81C7-4D97-B519-992D777A4CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D643C630-81C7-4D97-B519-992D777A4CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D643C630-81C7-4D97-B519-992D777A4CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D643C630-81C7-4D97-B519-992D777A4CD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

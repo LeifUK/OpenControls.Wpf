@@ -21,5 +21,23 @@ namespace OpenControls.Wpf.Utilities.View
         {
             DialogResult = true;
         }
+
+        public static bool ShowDialog(Window owner, string title, string label, ref string text)
+        {
+            OpenControls.Wpf.Utilities.View.InputTextView inputTextView = new OpenControls.Wpf.Utilities.View.InputTextView();
+            OpenControls.Wpf.Utilities.ViewModel.InputTextViewModel inputTextViewModel = new OpenControls.Wpf.Utilities.ViewModel.InputTextViewModel();
+            inputTextView.DataContext = inputTextViewModel;
+            inputTextView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            inputTextView.Owner = owner;
+            inputTextViewModel.Title = title;
+            inputTextViewModel.Label = label;
+            inputTextViewModel.Text = text;
+            bool success = (inputTextView.ShowDialog() == true);
+            if (success)
+            {
+                text = inputTextViewModel.Text;
+            }
+            return success;
+        }
     }
 }

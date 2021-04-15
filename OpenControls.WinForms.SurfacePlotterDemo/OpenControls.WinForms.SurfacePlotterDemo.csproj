@@ -96,6 +96,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OpenControls.Wpf.Serialisation\OpenControls.Wpf.Serialisation.csproj">
+      <Project>{4cd18485-9543-41d1-956c-55138b655e56}</Project>
+      <Name>OpenControls.Wpf.Serialisation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenControls.Wpf.SurfacePlot\OpenControls.Wpf.SurfacePlot.csproj">
       <Project>{546d9e1e-3b53-4cfb-9bae-f621bcaa41af}</Project>
       <Name>OpenControls.Wpf.SurfacePlot</Name>

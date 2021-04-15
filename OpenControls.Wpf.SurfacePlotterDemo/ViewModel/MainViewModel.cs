@@ -6,8 +6,12 @@ namespace OpenControls.Wpf.SurfacePlotterDemo.ViewModel
     {
         public MainViewModel()
         {
-            IConfigurationSerialiser = new OpenControls.Wpf.Serialisation.RegistryItemSerialiser(RegKey());
-            (IConfigurationSerialiser as OpenControls.Wpf.Serialisation.RegistryItemSerialiser).OpenKey();
+            OpenControls.Wpf.Serialisation.RegistryItemSerialiser registryItemSerialiser = new OpenControls.Wpf.Serialisation.RegistryItemSerialiser(RegKey());
+            IConfigurationSerialiser = registryItemSerialiser;
+            if (!registryItemSerialiser.OpenKey())
+            {
+                registryItemSerialiser.CreateKey();
+            }
 
             IConfiguration = new OpenControls.Wpf.SurfacePlot.Model.Configuration();
             Speeds = new ObservableCollection<int>();

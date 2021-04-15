@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OpenControls.WinForms.SurfacePlotterDemo
@@ -24,34 +18,24 @@ namespace OpenControls.WinForms.SurfacePlotterDemo
         {
             buttonSettings.Enabled = false;
             _configuration = new OpenControls.Wpf.SurfacePlot.Model.Configuration();
-            OpenControls.Wpf.SurfacePlot.Model.ConfigurationSerialiser configurationSerialiser = new Wpf.SurfacePlot.Model.ConfigurationSerialiser();
-            configurationSerialiser.CurrentRegistryKey = OpenRegKey();
+
+            OpenControls.Wpf.Serialisation.RegistryItemSerialiser configurationSerialiser = new OpenControls.Wpf.Serialisation.RegistryItemSerialiser(RegKeyPath);
+            if (!configurationSerialiser.OpenKey())
+            {
+                configurationSerialiser.CreateKey();
+            }
+            IConfigurationSerialiser = configurationSerialiser;
             _configuration.Load(configurationSerialiser);
 
             _surfacePlotControl.Initialise(_configuration);
         }
 
-        private Microsoft.Win32.RegistryKey OpenRegKey()
+        string RegKeyPath
         {
-            string path = System.Environment.Is64BitOperatingSystem ? @"SOFTWARE\Wow6432Node\OpenControls.Wpf.SurfacePlotDemo" : @"SOFTWARE\OpenControls.Wpf.SurfacePlotDemo";
-            Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(path, true);
-            if (key == null)
+            get
             {
-                key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(path);
+                return System.Environment.Is64BitOperatingSystem ? @"SOFTWARE\Wow6432Node\OpenControls.Wpf.SurfacePlotDemo\RawDataSettings" : @"SOFTWARE\OpenControls.Wpf.SurfacePlotDemo\RawDataSettings";
             }
-
-            if (key == null)
-            {
-                return null;
-            }
-
-            Microsoft.Win32.RegistryKey settingsKey = key.OpenSubKey("RawDataSettings", true);
-            if (settingsKey == null)
-            {
-                settingsKey = key.CreateSubKey("RawDataSettings");
-            }
-
-            return settingsKey;
         }
 
         protected override void OnResize(EventArgs e)
@@ -69,6 +53,8 @@ namespace OpenControls.WinForms.SurfacePlotterDemo
 
         OpenControls.Wpf.SurfacePlot.SurfacePlotControl _surfacePlotControl = new OpenControls.Wpf.SurfacePlot.SurfacePlotControl();
         OpenControls.Wpf.SurfacePlot.Model.Configuration _configuration;
+        private OpenControls.Wpf.Serialisation.IConfigurationSerialiser IConfigurationSerialiser;
+
         private void Run()
         {
             buttonSettings.Enabled = true;
@@ -119,6 +105,7 @@ namespace OpenControls.WinForms.SurfacePlotterDemo
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             OpenControls.Wpf.SurfacePlot.Exports.ShowConfigurationDialog(_configuration);
+            _configuration.Save(IConfigurationSerialiser);
         }
     }
 }

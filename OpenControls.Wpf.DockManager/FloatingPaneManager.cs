@@ -511,7 +511,7 @@ namespace OpenControls.Wpf.DockManager
             hWnd = new System.Windows.Interop.WindowInteropHelper(newFloatingPane).EnsureHandle();
             OpenControls.Wpf.Utilities.Windows.SendLeftMouseButtonDown(hWnd);
 
-            Point cursorPositionOnScreen = OpenControls.Wpf.Utilities.Windows.GetCursorPosition();
+            Point cursorPositionOnScreen = OpenControls.Wpf.Utilities.Windows.ScaleByDpi(OpenControls.Wpf.Utilities.Windows.GetCursorPosition());
             newFloatingPane.Left = cursorPositionOnScreen.X - 30;
             newFloatingPane.Top = cursorPositionOnScreen.Y - 30;
             newFloatingPane.Width = floatingPane.ActualWidth;

@@ -164,6 +164,7 @@ namespace OpenControls.Wpf.DockManager
             floatingPane.Top = cursorPositionOnScreen.Y - 30;
             floatingPane.Width = dockPane.ActualWidth;
             floatingPane.Height = dockPane.ActualHeight;
+            floatingPane.Show();
         }
 
         private void DockPane_FloatTabRequest(object sender, EventArgs e)

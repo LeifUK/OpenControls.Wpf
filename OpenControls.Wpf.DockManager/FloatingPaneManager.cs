@@ -82,6 +82,7 @@ namespace OpenControls.Wpf.DockManager
             newFloatingPane.Left = left;
             newFloatingPane.Top = top;
             newFloatingPane.IViewContainer.AddUserControl(userControl);
+            newFloatingPane.Show();
 
             return floatingPane;
         }

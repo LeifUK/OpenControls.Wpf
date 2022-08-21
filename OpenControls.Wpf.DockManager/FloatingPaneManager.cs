@@ -82,6 +82,7 @@ namespace OpenControls.Wpf.DockManager
             newFloatingPane.Left = left;
             newFloatingPane.Top = top;
             newFloatingPane.IViewContainer.AddUserControl(userControl);
+            newFloatingPane.Show();
 
             return floatingPane;
         }
@@ -464,7 +465,6 @@ namespace OpenControls.Wpf.DockManager
             floatingPane.EndDrag += FloatingPane_EndDrag;
             // Ensure the window remains on top of the main window
             floatingPane.Owner = Application.Current.MainWindow;
-            floatingPane.Show();
         }
 
         private void FloatingPane_GotFocus(object sender, RoutedEventArgs e)
@@ -516,6 +516,7 @@ namespace OpenControls.Wpf.DockManager
             newFloatingPane.Top = cursorPositionOnScreen.Y - 30;
             newFloatingPane.Width = floatingPane.ActualWidth;
             newFloatingPane.Height = floatingPane.ActualHeight;
+            newFloatingPane.Show();
         }
 
         #region IFloatingPaneManager

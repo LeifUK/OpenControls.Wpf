@@ -62,8 +62,8 @@ namespace OpenControls.WinForms.SurfacePlotterDemo
             const int YCount = 50;
             const int XCount = 50;
             int counter = 0;
-            float zMax = 150;
-            float zMin = -150;
+            float zMax = 259;
+            float zMin = -73.98f;
             float scale = 2f * (float)System.Math.PI / (float)XCount;
 
             List<List<float>> srcData = new List<List<float>>();

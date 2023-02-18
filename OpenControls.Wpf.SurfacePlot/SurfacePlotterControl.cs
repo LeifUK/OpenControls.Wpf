@@ -778,10 +778,20 @@ namespace OpenControls.Wpf.SurfacePlot
              * Doing this after the surface reduces issues with hidden lines being visible through the surface. 
              */
 
-            float zGridRange = (float)(_axisScaling * (_zAxisLabels.MaxValue - _zAxisLabels.MinValue) * ZScale);
+            /*
+             * The orginal code
+             * 
+              float zGridRange = (float)(_axisScaling * (_zAxisLabels.MaxValue - _zAxisLabels.MinValue) * ZScale);
+              float zGridInc = zGridRange / (float)(_zAxisLabels.Labels.Count - 1);
+              float zMin = -zGridRange / 2;
+              float zMax = -zMin;
+             */
+            float zLen = _zAxisLabels.MaxValue - _zAxisLabels.MinValue;//Compute zLen = zMax - zMin
+            float zGridRange = (float)(_axisScaling * zLen * ZScale);//Replace zMax - zMin with zLen
             float zGridInc = zGridRange / (float)(_zAxisLabels.Labels.Count - 1);
-            float zMin = -zGridRange / 2;
-            float zMax = -zMin;
+            float zMin = zGridRange * (_zAxisLabels.MinValue / zLen);//Compute current zMin by its length ratio
+            float zMax = zGridRange * (_zAxisLabels.MaxValue / zLen);//Compute current zMax by its length ratio
+            
             float xMax = _axisScaling * (_lineData.Count - 1);
             float yMax = _axisScaling * (_lineData[0].Count - 1);
 

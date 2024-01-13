@@ -82,7 +82,7 @@ namespace OpenControls.Wpf.DockManager
             newFloatingPane.Left = left;
             newFloatingPane.Top = top;
             newFloatingPane.IViewContainer.AddUserControl(userControl);
-			newFloatingPane.Show();
+			newFloatingPane.Show();             // Issue #10: Problem with TabHeaderControl.Height of dragged window
 
             return floatingPane;
         }
@@ -465,6 +465,7 @@ namespace OpenControls.Wpf.DockManager
             floatingPane.EndDrag += FloatingPane_EndDrag;
             // Ensure the window remains on top of the main window
             floatingPane.Owner = Application.Current.MainWindow;
+            // floatingPane.Show();             // Issue #10: Problem with TabHeaderControl.Height of dragged window
         }
 
         private void FloatingPane_GotFocus(object sender, RoutedEventArgs e)
@@ -511,12 +512,15 @@ namespace OpenControls.Wpf.DockManager
             hWnd = new System.Windows.Interop.WindowInteropHelper(newFloatingPane).EnsureHandle();
             OpenControls.Wpf.Utilities.Windows.SendLeftMouseButtonDown(hWnd);
 
-            Point cursorPositionOnScreen = OpenControls.Wpf.Utilities.Windows.GetCursorPosition();
+            // Issue #12: Problem with DPI in FloatingPaneManager.FloatingPane_FloatTabRequest
+            Point cursorPositionOnScreen = OpenControls.Wpf.Utilities.Windows
+                                            .ScaleByDpi(OpenControls.Wpf.Utilities.Windows.GetCursorPosition());
+            // Issue #12.
             newFloatingPane.Left = cursorPositionOnScreen.X - 30;
             newFloatingPane.Top = cursorPositionOnScreen.Y - 30;
             newFloatingPane.Width = floatingPane.ActualWidth;
             newFloatingPane.Height = floatingPane.ActualHeight;
-            newFloatingPane.Show();
+            newFloatingPane.Show();             // Issue #10: Problem with TabHeaderControl.Height of dragged window
         }
 
         #region IFloatingPaneManager

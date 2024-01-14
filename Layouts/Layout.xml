@@ -1,0 +1,32 @@
+<LayoutManager>
+  <SplitterPane Guid="9723c85a-e22f-45e9-877b-66b0f5ab3518" Orientation="Vertical" Width="796" Height="416">
+    <ToolPaneGroup Guid="782f2dc5-d1f5-46c0-a8ec-91f66c98d5bd" Width="396.5" Height="416">
+      <Tool Title="Tool Four View Model" ContentId="_toolFourView" />
+    </ToolPaneGroup>
+    <SplitterPane Guid="1110cc97-8ab8-4880-bb72-0ef0a59ff726" Orientation="Horizontal" Width="396.5" Height="416">
+      <SplitterPane Guid="66d62ca5-c746-4396-b2af-1f5ee36b7072" Orientation="Vertical" Width="396.5" Height="310.389714993804">
+        <DocumentPanel Guid="1bfc8236-d46e-4d59-b685-a6096418e815" Width="300.129103159713" Height="310.389714993804">
+          <DocumentPaneGroup Guid="0ad12838-c33d-4cfd-bcc3-8bf9f67b4f85" Width="300.129103159713" Height="310.389714993804">
+            <Document Title="File-1.txt" ContentId="_documentOneView" Url="C:\Data\File-1.txt" />
+            <Document Title="File-2.txt" ContentId="_documentOneView" Url="C:\Data\File-2.txt" />
+            <Document Title="File-3.txt" ContentId="_documentTwoView" Url="C:\Data\Folder\File-3.txt" />
+            <Document Title="File-4.txt" ContentId="_documentTwoView" Url="D:\Data\Folder\File-4.txt" />
+            <Document Title="File-5.txt" ContentId="_documentTwoView" Url="D:\Data\Folder\File-5.txt" />
+          </DocumentPaneGroup>
+        </DocumentPanel>
+        <ToolPaneGroup Guid="46d478c1-664a-48e4-9cbb-e9236bf6a597" Width="194.17" Height="310.389714993804">
+          <Tool Title="Tool Five View Model" ContentId="_toolFiveView" />
+          <Tool Title="Tool One View Model" ContentId="_toolOneView" />
+        </ToolPaneGroup>
+      </SplitterPane>
+      <ToolPaneGroup Guid="1b842e7f-72e9-47b2-a56c-27e68000191e" Width="396.5" Height="102.610285006196">
+        <Tool Title="Tool Two View Model" ContentId="_toolTwoView" />
+        <Tool Title="Tool Three View Model" ContentId="_toolThreeView" />
+      </ToolPaneGroup>
+    </SplitterPane>
+  </SplitterPane>
+  <LeftSide />
+  <TopSide />
+  <RightSide />
+  <BottomSide />
+</LayoutManager>

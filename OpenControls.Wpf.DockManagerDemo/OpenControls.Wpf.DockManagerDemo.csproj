@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>OpenControls.Wpf.DockManagerDemo</RootNamespace>
     <AssemblyName>OpenControls.Wpf.DockManagerDemo</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -101,7 +101,7 @@
   <ItemGroup>
     <ProjectReference Include="..\OpenControls.Wpf.DockManagerDemoViews\OpenControls.Wpf.DockManagerDemoViews.csproj">
       <Project>{f83c1ba1-abcc-40be-a01f-b3055ceec229}</Project>
-      <Name>ExampleDockManagerViews</Name>
+      <Name>OpenControls.Wpf.DockManagerDemoViews</Name>
     </ProjectReference>
     <ProjectReference Include="..\OpenControls.Wpf.DockManager.Themes.VS2019\OpenControls.Wpf.DockManager.Themes.VS2019.csproj">
       <Project>{968c6afe-1e13-4f9d-b8fc-28b2a2168c9d}</Project>

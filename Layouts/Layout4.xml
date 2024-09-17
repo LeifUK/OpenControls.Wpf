@@ -1,0 +1,42 @@
+<LayoutManager>
+  <SplitterPane Guid="e2df6553-df2f-4497-aa65-c9acd023a461" Orientation="Vertical" Width="1177.9" Height="757.9">
+    <ToolPaneGroup Guid="f470dc8a-9572-4423-942a-9cc842c1ca65" Width="462.375188006641" Height="757.9">
+      <Tool Title="Tool Three View Model" ContentId="_toolThreeView" />
+    </ToolPaneGroup>
+    <SplitterPane Guid="81bcd040-c1fe-40a6-a5dd-c36fd177ecbf" Orientation="Horizontal" Width="712.524811993359" Height="757.9">
+      <DocumentPanel Guid="f679cfe5-88e0-40ee-9db4-8df64d250dec" Width="712.524811993359" Height="461.945434462445">
+        <DocumentPaneGroup Guid="e626b0f0-a90e-49f5-a2dd-eaa565a9cc64" Width="712.524811993359" Height="461.945434462445">
+          <Document Title="File-1.txt" ContentId="_documentOneView" Url="C:\Data\File-1.txt" />
+          <Document Title="File-2.txt" ContentId="_documentOneView" Url="C:\Data\File-2.txt" />
+          <Document Title="File-4.txt" ContentId="_documentTwoView" Url="D:\Data\Folder\File-4.txt" />
+          <Document Title="File-5.txt" ContentId="_documentTwoView" Url="D:\Data\Folder\File-5.txt" />
+          <Document Title="File-3.txt" ContentId="_documentTwoView" Url="C:\Data\Folder\File-3.txt" />
+        </DocumentPaneGroup>
+      </DocumentPanel>
+      <ToolPaneGroup Guid="4307dc92-cd7e-49fb-944f-f12a0aa00108" Width="712.524811993359" Height="292.954565537555">
+        <Tool Title="Tool Two View Model" ContentId="_toolTwoView" />
+      </ToolPaneGroup>
+    </SplitterPane>
+  </SplitterPane>
+  <LeftSide>
+    <UnpinnedToolData Sibling="81bcd040-c1fe-40a6-a5dd-c36fd177ecbf" IsHorizontal="False" IsFirst="True">
+      <ToolPaneGroup Guid="9b9fb32d-6fc0-4846-88ca-27d4664017b9" Width="0" Height="0" />
+    </UnpinnedToolData>
+  </LeftSide>
+  <TopSide />
+  <RightSide>
+    <UnpinnedToolData Sibling="81bcd040-c1fe-40a6-a5dd-c36fd177ecbf" IsHorizontal="False" IsFirst="False">
+      <ToolPaneGroup Guid="1f76aabf-aebd-45d0-a8e2-fdfd0a5cbf38" Width="0" Height="0">
+        <Tool Title="Tool Five View Model" ContentId="_toolFiveView" />
+        <Tool Title="Tool One View Model" ContentId="_toolOneView" />
+      </ToolPaneGroup>
+    </UnpinnedToolData>
+  </RightSide>
+  <BottomSide>
+    <UnpinnedToolData Sibling="4307dc92-cd7e-49fb-944f-f12a0aa00108" IsHorizontal="True" IsFirst="False">
+      <ToolPaneGroup Guid="49bab9d8-2720-4e63-a5b0-823bd3b0dc2a" Width="354.762405996679" Height="300.754786450663">
+        <Tool Title="Tool Four View Model" ContentId="_toolFourView" />
+      </ToolPaneGroup>
+    </UnpinnedToolData>
+  </BottomSide>
+</LayoutManager>

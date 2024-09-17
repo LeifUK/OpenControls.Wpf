@@ -1,0 +1,56 @@
+<LayoutManager>
+  <SplitterPane Guid="11018b07-d9f0-48f1-8acd-e7b7fff56e31" Orientation="Horizontal" Width="1253" Height="994">
+    <DocumentPanel Guid="f15269ef-0b27-45b9-8fb2-90967ce121d8" Width="1253" Height="494">
+      <SplitterPane Guid="2fa308ed-72cd-4cc4-a480-af08a5c0e435" Orientation="Vertical" Width="1253" Height="494">
+        <SplitterPane Guid="a6756394-3fa2-4349-baba-a43370113089" Orientation="Horizontal" Width="624" Height="494">
+          <SplitterPane Guid="72281005-c8c7-4536-b7f1-bb0418e71c5b" Orientation="Vertical" Width="624" Height="244">
+            <DocumentPaneGroup Guid="874648aa-3776-4a97-bcdf-5c6da4efb146" Width="309" Height="244">
+              <Document Title="File-1.txt" ContentId="_documentOneView" Url="C:\Data\File-1.txt" />
+            </DocumentPaneGroup>
+            <DocumentPaneGroup Guid="2a9a8915-8f1e-46b7-b324-1c8a54c93324" Width="309" Height="244">
+              <Document Title="File-5.txt" ContentId="_documentTwoView" Url="D:\Data\Folder\File-5.txt" />
+            </DocumentPaneGroup>
+          </SplitterPane>
+          <DocumentPaneGroup Guid="9e81ec89-2e33-428a-90a3-d5d732410fbb" Width="624" Height="244">
+            <Document Title="File-3.txt" ContentId="_documentTwoView" Url="C:\Data\Folder\File-3.txt" />
+          </DocumentPaneGroup>
+        </SplitterPane>
+        <SplitterPane Guid="3fea3420-0a41-4d4f-82db-096a0dd54566" Orientation="Horizontal" Width="623" Height="494">
+          <DocumentPaneGroup Guid="bbe5b610-1b8d-45d9-b125-c2eee6544df2" Width="623" Height="244">
+            <Document Title="File-2.txt" ContentId="_documentOneView" Url="C:\Data\File-2.txt" />
+          </DocumentPaneGroup>
+          <DocumentPaneGroup Guid="e6403d2f-72bb-4f28-8565-7b0512ca6744" Width="623" Height="244">
+            <Document Title="File-4.txt" ContentId="_documentTwoView" Url="D:\Data\Folder\File-4.txt" />
+          </DocumentPaneGroup>
+        </SplitterPane>
+      </SplitterPane>
+    </DocumentPanel>
+    <SplitterPane Guid="66e97850-f933-42df-aa79-c36012719f19" Orientation="Vertical" Width="1253" Height="494">
+      <SplitterPane Guid="2126ded1-95f6-4749-bc00-aba8e00e0232" Orientation="Horizontal" Width="624" Height="494">
+        <SplitterPane Guid="04d19977-a785-4410-83e3-e4b2be2f72a3" Orientation="Vertical" Width="624" Height="244">
+          <ToolPaneGroup Guid="40b144f2-80a7-4585-bd0a-6c7d0a5d312f" Width="309" Height="244">
+            <Tool Title="Tool One View Model" ContentId="_toolOneView" />
+          </ToolPaneGroup>
+          <ToolPaneGroup Guid="2845809f-b74b-4634-9728-06f4a144b79a" Width="309" Height="244">
+            <Tool Title="Tool Five View Model" ContentId="_toolFiveView" />
+          </ToolPaneGroup>
+        </SplitterPane>
+        <ToolPaneGroup Guid="2b7cb664-d5e0-4601-b202-53012916eaae" Width="624" Height="244">
+          <Tool Title="Tool Three View Model" ContentId="_toolThreeView" />
+        </ToolPaneGroup>
+      </SplitterPane>
+      <SplitterPane Guid="da488161-70a7-474b-ba1e-2f9f3452cea5" Orientation="Horizontal" Width="623" Height="494">
+        <ToolPaneGroup Guid="2cf8851c-d0c2-476c-945f-fbff85c82592" Width="623" Height="244">
+          <Tool Title="Tool Two View Model" ContentId="_toolTwoView" />
+        </ToolPaneGroup>
+        <ToolPaneGroup Guid="08f84c65-c8a9-4970-a59b-579d8f1ea977" Width="623" Height="244">
+          <Tool Title="Tool Four View Model" ContentId="_toolFourView" />
+        </ToolPaneGroup>
+      </SplitterPane>
+    </SplitterPane>
+  </SplitterPane>
+  <LeftSide />
+  <TopSide />
+  <RightSide />
+  <BottomSide />
+</LayoutManager>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34414.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.Wpf.Serialisation", "OpenControls.Wpf.Serialisation\OpenControls.Wpf.Serialisation.csproj", "{4CD18485-9543-41D1-956C-55138B655E56}"
 EndProject
@@ -47,6 +47,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenControls.WinForms.SurfacePlotterDemo", "OpenControls.WinForms.SurfacePlotterDemo\OpenControls.WinForms.SurfacePlotterDemo.csproj", "{D643C630-81C7-4D97-B519-992D777A4CD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Layouts", "Layouts", "{946D4555-28D4-4ED7-A9C3-4EC120E1F876}"
+	ProjectSection(SolutionItems) = preProject
+		Layouts\Layout.xml = Layouts\Layout.xml
+		Layouts\Layout2.xml = Layouts\Layout2.xml
+		Layouts\Layout3.xml = Layouts\Layout3.xml
+		Layouts\Layout4.xml = Layouts\Layout4.xml
+		Layouts\Layout5.xml = Layouts\Layout5.xml
+		Layouts\Layout6.xml = Layouts\Layout6.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLLs", "DLLs", "{CE2DE741-6957-47D1-A056-22D0A87186F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,7 +11,7 @@
         Background="LightSteelBlue"
         Loaded="Window_Loaded"
         Closing="Window_Closing"
-        Title="WPF Dock Manager Demo" Height="450" Width="800">
+        Title="WPF Dock Manager Demo VS2019 Theme" Height="450" Width="800">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="34" />
     </WindowChrome.WindowChrome>
@@ -73,7 +73,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="WPFDockManagerDemo 2020" Foreground="Black" FontFamily="Arial" Margin="4 0 0 0" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="False"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="WPFDockManagerDemo 2020 VS2019 Theme" Foreground="Black" FontFamily="Arial" Margin="4 0 0 0" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="False"/>
 
                 <!--Caption buttons-->
                 <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" >
